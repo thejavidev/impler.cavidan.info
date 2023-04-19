@@ -172,13 +172,13 @@ const Services = () => {
                       <Tab.Container id="left-tabs-example" defaultActiveKey="first" className=''> 
                           <Row>
                             <Col lg={12}>
-                              <Nav  className="flex bg-[#B9553A] w-[100%]">
+                              <Nav  className="flex bg-[#B9553A] w-[100%] pr-5 pl-5">
                                 
                                 {tabsIcon && tabsIcon?.map((item)=>(
-                                  <Nav.Item key={item.id}>
-                                    <Nav.Link eventKey={item.eventKey} className='flex items-center outline-none border-none1'>
-                                        <h3>{item.name}</h3>
-                                        <img src={item.img1} alt="" />
+                                  <Nav.Item key={item.id} >
+                                    <Nav.Link eventKey={item.eventKey} className='flex items-center outline-none border-none1 border-radius-none'>
+                                        
+                                        <img src={item.img1} className='w-[70px]' alt="" />
                                     </Nav.Link>
                                   </Nav.Item>
                                 ))}
@@ -186,7 +186,6 @@ const Services = () => {
                             </Col>
                             <Col lg={12} className='mt-10'>
                               <Tab.Content>
-                                
                                 {tabsContent && tabsContent?.map((item)=>(
                                   <Tab.Pane eventKey={item.eventKey} key={item.id}>
                                       <Row>

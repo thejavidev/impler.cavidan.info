@@ -2,10 +2,12 @@
   "name": "impler",
   "private": true,
   "version": "0.0.0",
+  "homepage": "http://impler.cavidan.info",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "postbuild": "vite build/**/*.map",
     "preview": "vite preview"
   },
   "dependencies": {
