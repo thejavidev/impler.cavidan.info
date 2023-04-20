@@ -13,31 +13,93 @@ const swiperCard =[
     image:worksImg,
     imageOnHover:worksHover,
   },
+ 
   {
     id:2,
-    clientName:"Tefal",
+    clientName:"Tefal 2",
     image:worksImg,
     imageOnHover:worksHover,
   },
   {
     id:3,
-    clientName:"Tefal",
+    clientName:"Tefal 3",
     image:worksImg,
     imageOnHover:worksHover,
   },
   {
     id:4,
-    clientName:"Tefal",
+    clientName:"Tefal 4",
     image:worksImg,
     imageOnHover:worksHover,
   },
   {
     id:5,
-    clientName:"Tefal",
+    clientName:"Tefal 5",
     image:worksImg,
     imageOnHover:worksHover,
   }
 ]
+
+
+const SwiperCarousels =({src,hover,clientN})=>{
+  return(
+    <>
+   
+    <div className="hoverWorks">
+      <Link className='w-[100%] cursor-pointer'>
+        <div className="image imageWorks relative overflow-hidden">
+            <img className='w-[100%]' src={src} alt="" />
+            <div className="hover-img w-[100%] absolute  transformWorks " >
+              <img src={hover} alt="" />
+            </div>
+        </div>
+        <div className="flex items-center pt-[15px] ">
+          <span className='block w-[10px] h-[10px] bg-[#EFC643] rounded-full mr-2' ></span>
+          <div className=" flex items-center">
+            <h3 className="text-white text-[14px] ">Client :</h3>
+            <h3 className="text-white text-[14px] pl-2">{clientN}</h3>
+          </div>
+        </div>
+      </Link>
+    </div>
+    <div className="hoverWorks">
+      <Link className='w-[100%] cursor-pointer'>
+        <div className="image imageWorks relative overflow-hidden">
+            <img className='w-[100%]' src={src} alt="" />
+            <div className="hover-img w-[100%] absolute  transformWorks " >
+              <img src={hover} alt="" />
+            </div>
+        </div>
+        <div className=" flex items-center pt-[15px] ">
+          <span className='block w-[10px] h-[10px] bg-[#EFC643] rounded-full mr-2' ></span>
+          <div className=" flex items-center">
+            <h3 className="text-white text-[14px] ">Client :</h3>
+            <h3 className="text-white text-[14px] pl-2">{clientN}</h3>
+          </div>
+        </div>
+      </Link>
+    </div>
+    <div className="hoverWorks">
+      <Link className='w-[100%] cursor-pointer'>
+        <div className="image imageWorks relative overflow-hidden">
+            <img className='w-[100%]' src={src} alt="" />
+            <div className="hover-img w-[100%] absolute  transformWorks " >
+              <img src={hover} alt="" />
+            </div>
+        </div>
+        <div className=" flex items-center pt-[15px] ">
+          <span className='block w-[10px] h-[10px] bg-[#EFC643] rounded-full mr-2' ></span>
+          <div className=" flex items-center">
+            <h3 className="text-white text-[14px] ">Client :</h3>
+            <h3 className="text-white text-[14px] pl-2">{clientN}</h3>
+          </div>
+        </div>
+      </Link>
+    </div>
+    </>
+    
+  )
+}
 
 const Projects = () => {
   return (
@@ -53,7 +115,7 @@ const Projects = () => {
                 </Link>
             </Col>
             <Swiper
-              spaceBetween={20}
+              spaceBetween={40}
               slidesPerView={3}
               pagination={{ clickable: true }}
               loop={true}
@@ -62,58 +124,8 @@ const Projects = () => {
             >
               {swiperCard && swiperCard?.map((item,index)=>(
                 <SwiperSlide key={index}>
-                  <div className="flex flex-col gap-4">
-                    <div className="hoverWorks">
-                      <Link className='w-[100%] cursor-pointer'>
-                        <div className="image imageWorks relative overflow-hidden">
-                            <img className='w-[100%]' src={item.image} alt="" />
-                            <div className="hover-img w-[100%] absolute  transformWorks " >
-                              <img src={item.imageOnHover} alt="" />
-                            </div>
-                        </div>
-                        <div className=" flex items-center pt-[15px] ">
-                          <span className='block w-[10px] h-[10px] bg-[#EFC643] rounded-full mr-2' ></span>
-                          <div className=" flex items-center">
-                            <h3 className="text-white text-[14px] ">Client :</h3>
-                            <h3 className="text-white text-[14px] pl-2">{item.clientName}</h3>
-                          </div>
-                        </div>
-                      </Link>
-                    </div>
-                    <div className="hoverWorks">
-                      <Link className='w-[100%] cursor-pointer'>
-                        <div className="image imageWorks relative overflow-hidden">
-                            <img className='w-[100%]' src={item.image} alt="" />
-                            <div className="hover-img w-[100%] absolute  transformWorks " >
-                              <img src={item.imageOnHover} alt="" />
-                            </div>
-                        </div>
-                        <div className=" flex items-center pt-[15px] ">
-                          <span className='block w-[10px] h-[10px] bg-[#EFC643] rounded-full mr-2' ></span>
-                          <div className=" flex items-center">
-                            <h3 className="text-white text-[14px] ">Client :</h3>
-                            <h3 className="text-white text-[14px] pl-2">{item.clientName}</h3>
-                          </div>
-                        </div>
-                      </Link>
-                    </div>
-                    <div className="hoverWorks">
-                      <Link className='w-[100%] cursor-pointer'>
-                        <div className="image imageWorks relative overflow-hidden">
-                            <img className='w-[100%]' src={item.image} alt="" />
-                            <div className="hover-img w-[100%] absolute  transformWorks " >
-                              <img src={item.imageOnHover} alt="" />
-                            </div>
-                        </div>
-                        <div className=" flex items-center pt-[15px] ">
-                          <span className='block w-[10px] h-[10px] bg-[#EFC643] rounded-full mr-2' ></span>
-                          <div className=" flex items-center">
-                            <h3 className="text-white text-[14px] ">Client :</h3>
-                            <h3 className="text-white text-[14px] pl-2">{item.clientName}</h3>
-                          </div>
-                        </div>
-                      </Link>
-                    </div>
+                  <div className="flex flex-col gap-10">
+                    <SwiperCarousels src={item.image} hover={item.imageOnHover} clientN={item.clientName} />
                   </div>
                 </SwiperSlide>
               ))}
