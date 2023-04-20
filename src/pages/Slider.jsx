@@ -9,7 +9,7 @@ const Slider = () => {
       <section className="relative w-[100%] h-[100%]" id="home">
         <Row>
           <div className="video-inner h-[100vh] w-[100%] relative">
-            <video autoPlay muted loop className="fixed top-0 left-0 right-0 w-[100%] z-[-1] h-[100%] object-cover align-middle">
+            <video autoPlay muted loop className="absolute top-0 left-0 right-0 w-[100%] z-[-1] h-[100%] object-cover align-middle">
               <source src={sliderVideo} />
             </video>
           </div>

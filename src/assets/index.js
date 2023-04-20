@@ -7,6 +7,9 @@ import partner2 from './images/partners/partner2.svg';
 import team1 from './images/teams/team1.png';
 import team2 from './images/teams/team2.png';
 import sliderVideo from './video/sliderVideo.mp4';
+import worksImg from './images/works/works.png';
+import worksHover from './images/works/worksHover.png';
+import worksModal from './images/works/worksModal.png';
 
 export {
     aboutImg,
@@ -17,5 +20,8 @@ export {
     partner2,
     team1,
     team2,
-    sliderVideo
+    sliderVideo,
+    worksImg,
+    worksHover,
+    worksModal
 }

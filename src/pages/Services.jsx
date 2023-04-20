@@ -1,11 +1,11 @@
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { servicesPng, servivesGif } from '../assets';
+import { servicesPng, servivesGif,implerLogo } from '../assets';
 import { useState } from 'react';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import Tab from 'react-bootstrap/Tab';
-import Tabs from 'react-bootstrap/Tabs';
+import { Link } from "react-router-dom";
 import Nav from 'react-bootstrap/Nav';
 
 const Services = () => {
@@ -143,7 +143,11 @@ const Services = () => {
         <Row>
           <div className="service_text">
             <h2 className='text-white leading-3 uppercase text-[50px] pb-20 font-bold'>Services</h2>
-    
+            <Link to='#home' >
+                <div className="w-[160px] mb-10">
+                    <img src={implerLogo} alt="" className='max-w-[100%] h-auto' />
+                </div>
+            </Link>
           </div>
           <div className="services-lists" >
             <Row >
@@ -157,11 +161,8 @@ const Services = () => {
                         <div className="title mt-10">
                           <h3 className='w-[50%] text-[20px] text-white'>{item.titleh3}</h3>
                         </div>
-                       
-                    
                   </Col>
                 ))
-                
               }
               {isOpened && (
                   <div className='relative bg-[#AE4D36] border-none1 p-10' >
