@@ -3,7 +3,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { servicesPng, servivesGif,implerLogo } from '../assets';
 import { useState } from 'react';
-import { AiFillCloseCircle } from 'react-icons/ai';
+import { AiFillCloseCircle } from 'react-icons/Ai';
 import Tab from 'react-bootstrap/Tab';
 import { Link } from "react-router-dom";
 import Nav from 'react-bootstrap/Nav';
