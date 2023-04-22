@@ -1,118 +1,15 @@
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { servicesPng, servivesGif,implerLogo } from '../assets';
+import { implerLogo } from '../assets';
 import { useState } from 'react';
 import { AiFillCloseCircle } from 'react-icons/Ai';
 import Tab from 'react-bootstrap/Tab';
 import { Link } from "react-router-dom";
 import Nav from 'react-bootstrap/Nav';
+import { services,tabsIcon,tabsContent } from '../components/fakeData/LocalData';
 
 const Services = () => {
-
-  const services =[
-    {
-      id:1,
-      img1:servicesPng,
-      img2:servivesGif,
-      alt:"test 1",
-      titleh3:"Social Media Marketing"
-    },
-    {
-      id:2,
-      img1:servicesPng,
-      img2:servivesGif,
-      alt:"test 2",
-      titleh3:"Social Media Marketing"
-    },
-    {
-      id:3,
-      img1:servicesPng,
-      img2:servivesGif,
-      alt:"test 3",
-      titleh3:"Social Media Marketing"
-    },
-    {
-      id:3,
-      img1:servicesPng,
-      img2:servivesGif,
-      alt:"test 3",
-      titleh3:"Social Media Marketing"
-    },
-    {
-      id:4,
-      img1:servicesPng,
-      img2:servivesGif,
-      alt:"test 3",
-      titleh3:"Social Media Marketing"
-    },
-    {
-      id:5,
-      img1:servicesPng,
-      img2:servivesGif,
-      alt:"test 3",
-      titleh3:"Social Media Marketing"
-    },
-    {
-      id:6,
-      img1:servicesPng,
-      img2:servivesGif,
-      alt:"test 3",
-      titleh3:"Social Media Marketing"
-    },
-    {
-      id:7,
-      img1:servicesPng,
-      img2:servivesGif,
-      alt:"test 3",
-      titleh3:"Social Media Marketing"
-    },
-    {
-      id:8,
-      img1:servicesPng,
-      img2:servivesGif,
-      alt:"test 3",
-      titleh3:"Social Media Marketing"
-    },
-    {
-      id:9,
-      img1:servicesPng,
-      img2:servivesGif,
-      alt:"test 3",
-      titleh3:"Social Media Marketing"
-    },
-  ]
-
-  const tabsIcon =[
-    {
-      id:1,
-      img1:servicesPng,
-      img2:servivesGif,
-      eventKey:"first",
-      name:"Home 1"
-    },
-    {
-      id:2,
-      img1:servicesPng,
-      img2:servivesGif,
-      eventKey:"second",
-      name:"Home 2"
-    },
-  ]
-  const tabsContent =[
-    {
-      id:1,
-      eventKey:"first",
-      titleLeft:"1-Lorem ipsum dolor sit amet consectetur adipisicing elit. Non odio id assumenda sunt ab, modi vitae architecto aperiam, quaerat veniam earum illo veritatis provident libero eveniet doloremque minus sit rem.",
-      titleRight:"2-Lorem ipsum dolor sit amet consectetur adipisicing elit. Non odio id assumenda sunt ab, modi vitae architecto aperiam, quaerat veniam earum illo veritatis provident libero eveniet doloremque minus sit rem."
-    },
-    {
-      id:2,
-      eventKey:"second",
-      titleLeft:"3-Lorem ipsum dolor sit amet consectetur adipisicing elit. Non odio id assumenda sunt ab, modi vitae architecto aperiam, quaerat veniam earum illo veritatis provident libero eveniet doloremque minus sit rem.",
-      titleRight:"4-Lorem ipsum dolor sit amet consectetur adipisicing elit. Non odio id assumenda sunt ab, modi vitae architecto aperiam, quaerat veniam earum illo veritatis provident libero eveniet doloremque minus sit rem."
-    },
-  ]
 
   const [isOpened, setIsOpened] = useState(false);
 
