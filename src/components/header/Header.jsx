@@ -1,17 +1,13 @@
-
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-
 import Nav from 'react-bootstrap/Nav';
 import { navbarCards } from '../fakeData/LocalData';
-
 import { implerLogo } from '../../assets';
 import { useEffect, useState } from 'react';
 
 const Header = () => {
   const [sticky, setSticky] = useState("");
   useEffect(() => {
-    console.log("hello");
     window.addEventListener("scroll", isSticky);
     return () => {
       window.removeEventListener("scroll", isSticky);
@@ -22,12 +18,11 @@ const Header = () => {
     const scrollTop = window.scrollY;
     const stickyClass = scrollTop >= 250 ? "is-sticky" : "";
     setSticky(stickyClass);
-    console.log(stickyClass);
   };
   const classes = `${sticky}`;
   return (
     <>
-      <header id={sticky} className='absolute top-0 left-0 right-0 z-50 w-[100%] pt-4'>
+      <header id={classes} className={` absolute top-0 left-0 right-0 z-50 w-[100%] pt-4`}>
         <Container>
           <Row>  
             <Nav className='items-center justify-between'>
@@ -59,5 +54,4 @@ const Header = () => {
     </>
   )
 }
-
 export default Header

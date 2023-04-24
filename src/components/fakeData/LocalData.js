@@ -1,7 +1,7 @@
 import { partner1, partner2, servicesPng, servivesGif, team1, team2, worksHover, worksImg, you } from "../../assets";
 import { AiOutlineInstagram,AiFillLinkedin } from 'react-icons/Ai';
 import { BsFacebook } from 'react-icons/Bs';
-import { FaTiktok } from 'react-icons/Fa';
+import { FaTiktok } from 'react-icons/fa';
 
 const companyCard = [
     {

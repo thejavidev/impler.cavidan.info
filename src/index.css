@@ -90,6 +90,7 @@ html,body{
   visibility: visible;
   transform: scaleX(1);
 }
+
 @media (min-width: 992px){
   .modal-lg, .modal-xl {
     --bs-modal-width: 1030px;
