@@ -23,7 +23,7 @@ const Projects = () => {
     <>
 
 
-      <section className='bg-[#234656] pt-[150px] pb-[150px] pr-0 pl-0 relative w-[100%] h-[100%]'>
+      <section className='bg-[#234656] pt-[150px] pb-[150px] pr-0 pl-0 relative w-[100%] h-[100%]' id='projects'>
         <Container>
           <Row>
           

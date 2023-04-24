@@ -35,7 +35,7 @@ const Services = () => {
 
   return (
     <>
-     <section className='bg-[#B9553A] pt-[150px] pb-[150px] pl-0 pr-0'>
+     <section className='bg-[#B9553A] pt-[150px] pb-[150px] pl-0 pr-0' id='services'>
       <Container>
         <Row>
           <div className="service_text">

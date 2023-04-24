@@ -9,7 +9,7 @@ import { companyCard } from '../components/fakeData/LocalData';
 const Company = () => {
   return (
     <>
-      <section className='bg-[#cc67a0] pt-[150px] pb-[150px] pl-0 pr-0'>
+      <section className='bg-[#cc67a0] pt-[150px] pb-[150px] pl-0 pr-0' id='company'>
         <Container >
           <Row>
             <div className='block'>
@@ -23,7 +23,7 @@ const Company = () => {
             <div className="pt-[40px] flex justify-center flex-wrap">
               {
                 companyCard && companyCard?.map((item, index) => (
-                  <Col lg='2' className='flex justify-center' key={index}>
+                  <Col lg='2' md='3' sm='4' className='flex justify-center' key={index}>
                     <div className="companyItem w-[170px] h-[170px] overflow-hidden block relative p-[10px] cursor-pointer">
                       <div className="overflow-hidden w-[100%] z-0 relative rounded-full">
                         <img className='max-w-[100%] overflow-hidden' src={item.pciture} alt="" />

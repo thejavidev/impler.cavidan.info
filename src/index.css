@@ -23,10 +23,14 @@ html,body{
   outline: none !important;
   box-shadow: none !important;
 }
+
 .btn:hover{
   box-shadow: none !important;
   background-color: transparent !important;
 
+}
+.borderInp{
+  border: solid 1px #ffffff;
 }
 .border-radius-none{
   border-top-left-radius: 0 !important;
@@ -50,8 +54,12 @@ html,body{
   opacity: 1;
   transform: scaleX(1) scaleY(1);
 }
-
-
+.hoverIcon{
+  transition: all .3s linear;
+}
+.hoverIcon:hover{
+  color: #F6C300 !important;
+}
 
 @media (min-width: 992px){
   .modal-lg, .modal-xl {

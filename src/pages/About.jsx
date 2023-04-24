@@ -7,7 +7,7 @@ import Container from 'react-bootstrap/Container';
 const About = () => {
   return (
     <>
-      <section className='bg-[#89a225] pt-[150px] pb-[150px] pl-0 pr-0'>
+      <section className='bg-[#89a225] pt-[150px] pb-[150px] pl-0 pr-0' id='about'>
         <Container>
           <Row>
             <Col lg='12' md='12' className='mb-10'> 

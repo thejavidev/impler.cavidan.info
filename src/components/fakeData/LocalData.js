@@ -1,4 +1,7 @@
-import { servicesPng, servivesGif, team1, team2, worksHover, worksImg, you } from "../../assets"
+import { partner1, partner2, servicesPng, servivesGif, team1, team2, worksHover, worksImg, you } from "../../assets";
+import { AiOutlineInstagram,AiFillLinkedin } from 'react-icons/Ai';
+import { BsFacebook } from 'react-icons/Bs';
+import { FaTiktok } from 'react-icons/Fa';
 
 const companyCard = [
     {
@@ -279,12 +282,195 @@ const tabsContent =[
     titleRight:"4-Lorem ipsum dolor sit amet consectetur adipisicing elit. Non odio id assumenda sunt ab, modi vitae architecto aperiam, quaerat veniam earum illo veritatis provident libero eveniet doloremque minus sit rem."
   },
 ]
+const partnersData=[
+  {
+    id:1,
+    logo:partner1
+  },
+  {
+    id:2,
+    logo:partner2
+  },
+  {
+    id:3,
+    logo:partner1
+  },
+  {
+    id:4,
+    logo:partner2
+  },
+  {
+    id:5,
+    logo:partner1
+  },
+  {
+    id:6,
+    logo:partner2
+  },
+  {
+    id:7,
+    logo:partner1
+  },
+  {
+    id:8,
+    logo:partner2
+  },
+  {
+    id:9,
+    logo:partner1
+  },
+  {
+    id:10,
+    logo:partner2
+  },
+  {
+    id:11,
+    logo:partner1
+  },
+  {
+    id:12,
+    logo:partner2
+  },
+  {
+    id:13,
+    logo:partner1
+  },
+  {
+    id:14,
+    logo:partner2
+  },
+  {
+    id:15,
+    logo:partner1
+  },
+  {
+    id:16,
+    logo:partner2
+  },
+  {
+    id:17,
+    logo:partner1
+  },
+  {
+    id:18,
+    logo:partner2
+  },
+  {
+    id:19,
+    logo:partner1
+  },
+  {
+    id:20,
+    logo:partner2
+  },
+]
+const inputCards=[
+  {
+    ref:"myName",
+    htmlFor:"name",
+    type:"text",
+    placeholder:"name",
+    name:"name",
+    id:"name",
+    lg:6,
+    md:6
+  },
+  {
+    ref:"myCompany",
+    htmlFor:"company",
+    type:"text",
+    placeholder:"Company, job title",
+    name:"company",
+    id:"company",
+    lg:6,
+    md:6
+  },
+  {
+    ref:"myEmail",
+    htmlFor:"email",
+    type:"email",
+    placeholder:"Email",
+    name:"email",
+    id:"email",
+    lg:6,
+    md:6
+  },
+  {
+    ref:"myPhone",
+    htmlFor:"phone",
+    type:"tel",
+    placeholder:"Phone",
+    name:"phone",
+    id:"phone",
+    lg:6,
+    md:6
+  },
+ 
+]
+const socials=[
+  {
+    id:1,
+    href:"https://www.instagram.com/Instagram",
+    Icon:AiOutlineInstagram,
+  },
+  {
+    id:2,
+    href:"https://www.facebook.com/impler",
+    Icon:BsFacebook,
+  },
+  {
+    id:3,
+    href:"https://www.linkedin.com/Linkedin",
+    Icon:AiFillLinkedin,
+  },
+  {
+    id:4,
+    href:"https://facebook.com/impler",
+    Icon:FaTiktok,
+  },
+]
+const navbarCards =[
+  {
+    id:1,
+    href:"about",
+    name:"haqqimizda"
+  },
+  {
+    id:2,
+    href:"services",
+    name:"Servis"
+  },
+  {
+    id:3,
+    href:"projects",
+    name:"İşlərimiz"
+  },
+  {
+    id:4,
+    href:"company",
+    name:"Komandamız"
+  },
+  {
+    id:5,
+    href:"partners",
+    name:"Partnyorlar"
+  },
+  {
+    id:6,
+    href:"contact",
+    name:"Əlaqə"
+  },
+]
 
 export {
   companyCard,
   swiperCard,
   services,
   tabsIcon,
-  tabsContent
+  tabsContent,
+  partnersData,
+  inputCards,
+  socials,
+  navbarCards
 }
   
