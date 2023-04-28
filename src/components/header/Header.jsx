@@ -67,14 +67,11 @@ const Header = () => {
   const langChecker = (lang = "az") => {
 		return lang !== localStorage.getItem("i18nextLng");
 	};
-    const langs = ["az", "ru", "en"];
+    const langs = ["az", "ru", "en"
+   
+  ];
     const myLang = langs.filter(langChecker);
-
- 
- 
-	
-
-
+  
   return (
     <>
       <header id={classes} className={` absolute top-0 left-0 right-0 z-50 w-[100%] pt-4`}>
@@ -86,7 +83,7 @@ const Header = () => {
                   <img src={implerLogo} alt="" className='w-[150px]' />
                 </a>
               </div>
-              <div className="nav-menu relative">
+              <div className="nav-menu relative flex">
                 <div className="menu-list">
                   <ul className='flex items-center w-[100%] justify-end'>
                     {
@@ -102,22 +99,18 @@ const Header = () => {
                 </div>
                 <div className="langs">
                   <div className="languages absolute top-[50px] right-[10px]">
-                   
                     <Upper
                      toggle={() => setOpen(!open)}
                       switchLang={
                         open && (
                           <div className="absolute inset-0 mt-10 w-[40px] h-[50px] flex flex-col text-left ">
                             {myLang.map((lang, index) => (
-                              <button className='uppercase font-[18px] border-solid border-2 border-sky-500 mt-2' key={index} onClick={()=>clickHandle(lang)} >
+                              <button className='uppercase font-[18px] text-white mt-2 hoverIcon' key={index} onClick={()=>clickHandle(lang)} >
                                 {lang}
                               </button>
                             ))}
                           </div>
-
-                        )
-                      }
-
+                        )}
                     />
                   </div>
                 </div>

@@ -1,7 +1,7 @@
 const getMultiLang = (eng, aze, rus) => {
-    return localStorage.getItem("lang") === "en"
+    return localStorage.getItem("i18nextLng") === "en"
         ? eng
-        : localStorage.getItem("lang") === "ru"
+        : localStorage.getItem("i18nextLng") === "ru"
         ? rus
         
         : aze;
