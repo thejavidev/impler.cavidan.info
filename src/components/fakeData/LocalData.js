@@ -366,49 +366,7 @@ const partnersData=[
     logo:partner2
   },
 ]
-const inputCards=[
-  {
-    ref:"myName",
-    htmlFor:"name",
-    type:"text",
-    placeholder:"name",
-    name:"name",
-    id:"name",
-    lg:6,
-    md:6
-  },
-  {
-    ref:"myCompany",
-    htmlFor:"company",
-    type:"text",
-    placeholder:"Company, job title",
-    name:"company",
-    id:"company",
-    lg:6,
-    md:6
-  },
-  {
-    ref:"myEmail",
-    htmlFor:"email",
-    type:"email",
-    placeholder:"Email",
-    name:"email",
-    id:"email",
-    lg:6,
-    md:6
-  },
-  {
-    ref:"myPhone",
-    htmlFor:"phone",
-    type:"tel",
-    placeholder:"Phone",
-    name:"phone",
-    id:"phone",
-    lg:6,
-    md:6
-  },
- 
-]
+
 const socials=[
   {
     id:1,
@@ -440,7 +398,7 @@ export {
   tabsIcon,
   tabsContent,
   partnersData,
-  inputCards,
+
   socials,
 }
   

@@ -5,13 +5,14 @@ import './index.css';
 import { BrowserRouter } from 'react-router-dom';
 import resources from './components/transitions';
 import i18next from 'i18next';
-import { I18nextProvider } from 'react-i18next';
+import { I18nextProvider, initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
+const availableLanguages = ["az", "en", "ru"];
 
-
-i18next.use(LanguageDetector).init({
+i18next.use(LanguageDetector,initReactI18next,).init({
   resources,
+  whitelist: availableLanguages,
   interpolation:{escapeValue:true},
   lng: window.localStorage.getItem('i18nextLng'),
   debug: false,

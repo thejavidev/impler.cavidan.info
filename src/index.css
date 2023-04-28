@@ -10,7 +10,7 @@ html,body{
   overflow-x: hidden;
 }
 ::-webkit-scrollbar{
-  width: 8px;
+  width: 0px;
 }
 .closeDiv{
   display: none !important;

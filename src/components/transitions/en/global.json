@@ -4,5 +4,15 @@
     "projects":"Projects",
     "company":"Our team",
     "partners":"partners",
-    "contact":"Contact"
+    "contact":"Contact",
+    "client":"Client",
+    "period":"period",
+    "more":"more",
+    "works":"Works",
+    "send":"Send",
+    "name":"Name",
+    "jobtitle":"Company, job title",
+    "email":"E-mail",
+    "phone":"Phone",
+    "footer":"All rights reserved by Impler LLC."
 }

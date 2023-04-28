@@ -4,16 +4,18 @@ import Col from 'react-bootstrap/Col';
 import { Link } from 'react-router-dom';
 import { implerLogo} from '../assets';
 import { companyCard } from '../components/fakeData/LocalData';
+import { useTranslation } from 'react-i18next';
 
 
 const Company = () => {
+  const [t] = useTranslation("translation");
   return (
     <>
       <section className='bg-[#cc67a0] pt-[150px] pb-[150px] pl-0 pr-0' id='company'>
         <Container >
           <Row>
             <div className='block'>
-              <h2 className='text-white uppercase text-[50px] mb-4 font-bold'>Komandamiz</h2>
+              <h2 className='text-white uppercase text-[50px] mb-4 font-bold'>{t("company")}</h2>
               <Link>
                 <div className="w-[160px] mb-10">
                   <img src={implerLogo} alt="" className='max-w-[100%] h-auto' />

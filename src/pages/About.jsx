@@ -18,7 +18,7 @@ const About = () => {
           <Row>
             <Col lg='12' md='12' className='mb-10'> 
                 <h2 className='text-white text-[50px] font-bold uppercase pt-0 pl-0 pb-10 pr-0 '>
-                  Haqqımızda
+                  {t("about")}
                 </h2>
                 <Link to='#home' >
                     <div className="w-[160px]">

@@ -1,8 +1,19 @@
 {
-    "about":"Haqqımda",
+    "about":"Haqqımızda",
     "servis":"Servis",
     "projects":"İşlərimiz",
     "company":"Komandamız",
     "partners":"partnyorlar",
-    "contact":"Əlaqə"
+    "contact":"Əlaqə",
+    "client":"Müştəri",
+    "period":"period",
+    "more":"daha çox",
+    "works":"İşlərimiz",
+    "send":"Göndər",
+    "name":"Adınız",
+    "jobtitle":"Şirkət adı",
+    "email":"E-mail",
+    "phone":"Telefon",
+    "footer":"Bütün hüquqlar Impler MMC tərəfindən qorunur."
+   
 }

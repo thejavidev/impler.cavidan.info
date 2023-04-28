@@ -29,8 +29,8 @@ export default function SwiperCards({ img1, imgHvr, idP, clientNm,lngText ,prd})
                         <div className="flex items-center pt-[15px] ">
                             <span className='block w-[10px] h-[10px] bg-[#EFC643] rounded-full mr-2' ></span>
                             <div className=" flex items-center">
-                                <h3 className="text-white text-[14px] ">Client :</h3>
-                                <h3 className="text-white text-[14px] pl-2">{clientNm}</h3>
+                                <h3 className="text-white text-[14px] capitalize">{t("client")} :</h3>
+                                <h3 className="text-white text-[14px] pl-2 capitalize">{clientNm}</h3>
                             </div>
                         </div>
                     </Link>
@@ -58,15 +58,15 @@ export default function SwiperCards({ img1, imgHvr, idP, clientNm,lngText ,prd})
                                 <div className="flex items-center">
                                     <span className='block w-[10px] h-[10px] bg-[#EFC643] rounded-full mr-[10px]'></span>
                                     <div className="flex items-center">
-                                        <h3 className='text-white opacity-70 text-[14px]'>Client : </h3>
-                                        <h3 className='pl-[12px] text-white opacity-70 text-[14px]'>{clientNm}</h3>
+                                        <h3 className='text-white opacity-70 text-[14px] capitalize'>{t("client")} : </h3>
+                                        <h3 className='pl-[12px] text-white opacity-70 text-[14px] capitalize'>{clientNm}</h3>
                                     </div>
                                 </div>
                                 <div className="flex items-center ml-[20px]">
                                     <span className='block w-[10px] h-[10px] bg-[#EFC643] rounded-full mr-[10px]'></span>
                                     <div className="flex items-center">
-                                        <h3 className='text-white opacity-70 text-[14px]'>Period :</h3>
-                                        <h3 className='pl-[12px] text-white opacity-70 text-[14px]'>{prd}</h3>
+                                        <h3 className='text-white opacity-70 text-[14px] capitalize'>{t("period")} :</h3>
+                                        <h3 className='pl-[12px] text-white opacity-70 text-[14px] capitalize'>{prd}</h3>
                                     </div>
                                 </div>
                                 

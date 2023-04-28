@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { FiChevronDown } from 'react-icons/Fi';
 import SwiperCards from '../components/UI/SwiperCards';
 import { swiperCard } from '../components/fakeData/LocalData';
-
+import { useTranslation } from 'react-i18next';
 
 
 
@@ -15,7 +15,7 @@ const Projects = () => {
 
     const [nonElement,setNonELement] =useState(9);
     const slice =swiperCard.myDatas.slice(0,nonElement)
-
+    const [t] =useTranslation("translation");
     const loadMore  =()=>{
       setNonELement(nonElement+nonElement)
     }
@@ -28,7 +28,7 @@ const Projects = () => {
           <Row>
           
             <Col lg='12' md='12' className='pb-[40px]'>
-              <h2 className='text-[#fff] uppercase text-[50px] pt-0 pl-0 pr-0 pb-10 '>Works</h2>
+              <h2 className='text-[#fff] uppercase text-[50px] pt-0 pl-0 pr-0 pb-10 font-bold'>{t("works")}</h2>
               <Link to='/' >
                 <div className="w-[160px] mb-10">
                   <img src={implerLogo} alt="" className='max-w-[100%] h-auto' />
@@ -41,7 +41,7 @@ const Projects = () => {
             
           </Row>
           <button onClick={()=>loadMore()} className='flex items-center text-white uppercase font-bold text-[20px]'>
-               <FiChevronDown className='mr-2 font-bold text-[30px] text-[#EFC643]' /> daha cox
+               <FiChevronDown className='mr-2 font-bold text-[30px] text-[#EFC643]' /> {t("more")}
         </button> 
         </Container>
        

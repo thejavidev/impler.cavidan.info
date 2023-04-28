@@ -8,6 +8,7 @@ import Tab from 'react-bootstrap/Tab';
 import { Link } from "react-router-dom";
 import Nav from 'react-bootstrap/Nav';
 import { services,tabsIcon,tabsContent } from '../components/fakeData/LocalData';
+import { useTranslation } from 'react-i18next';
 
 const Services = () => {
 
@@ -32,14 +33,14 @@ const Services = () => {
     });
     
   }
-
+  const [t] = useTranslation("translation");
   return (
     <>
      <section className='bg-[#B9553A] pt-[150px] pb-[150px] pl-0 pr-0' id='services'>
       <Container>
         <Row>
           <div className="service_text">
-            <h2 className='text-white leading-3 uppercase text-[50px] pb-20 font-bold'>Services</h2>
+            <h2 className='text-white leading-3 uppercase text-[50px] pb-20 font-bold'>{t("service")}</h2>
             <Link to='#home' >
                 <div className="w-[160px] mb-10">
                     <img src={implerLogo} alt="" className='max-w-[100%] h-auto' />
