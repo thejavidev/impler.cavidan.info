@@ -40,7 +40,7 @@ const Services = () => {
       <Container>
         <Row>
           <div className="service_text">
-            <h2 className='text-white leading-3 uppercase text-[50px] pb-20 font-bold'>{t("service")}</h2>
+            <h2 className='text-white leading-3 uppercase text-[50px] pb-20 font-bold'>{t("servis")}</h2>
             <Link to='#home' >
                 <div className="w-[160px] mb-10">
                     <img src={implerLogo} alt="" className='max-w-[100%] h-auto' />

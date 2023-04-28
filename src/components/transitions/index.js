@@ -1,10 +1,10 @@
-import global_az from './az/global.json';
-import global_en from './en/global.json';
-import global_ru from './ru/global.json';
+import global_az from './azerbaycan/global.json';
+import global_en from './english/global.json';
+import global_ru from './russian/global.json';
 
 const resources = {
-    az: { translation: global_az },
-    en: { translation: global_en },
-    ru: { translation: global_ru}
+    azerbaycan: { translation: global_az },
+    english: { translation: global_en },
+    russian: { translation: global_ru}
 }
 export default resources

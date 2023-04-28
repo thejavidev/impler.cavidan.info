@@ -11,7 +11,7 @@ import worksImg from './images/works/works.png';
 import worksHover from './images/works/worksHover.png';
 import worksModal from './images/works/worksModal.png';
 import you from './images/teams/you.png';
-
+import loaderGif from './images/loader/loader.gif';
 export {
     aboutImg,
     implerLogo,
@@ -25,5 +25,6 @@ export {
     worksImg,
     worksHover,
     worksModal,
-    you
+    you,
+    loaderGif
 }

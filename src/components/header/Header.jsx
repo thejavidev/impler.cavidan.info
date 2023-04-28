@@ -64,12 +64,10 @@ const Header = () => {
     await i18n.changeLanguage(lang);
     setOpen(false);
   }
-  const langChecker = (lang = "az") => {
+  const langChecker = (lang = "azerbaycan") => {
 		return lang !== localStorage.getItem("i18nextLng");
 	};
-    const langs = ["az", "ru", "en"
-   
-  ];
+    const langs = ["azerbaycan", "russian", "english"];
     const myLang = langs.filter(langChecker);
   
   return (
@@ -103,9 +101,9 @@ const Header = () => {
                      toggle={() => setOpen(!open)}
                       switchLang={
                         open && (
-                          <div className="absolute inset-0 mt-10 w-[40px] h-[50px] flex flex-col text-left ">
+                          <div className="absolute  mt-6 right-[7px] top-1 h-[50px] flex flex-col text-left items-end">
                             {myLang.map((lang, index) => (
-                              <button className='uppercase font-[18px] text-white mt-2 hoverIcon' key={index} onClick={()=>clickHandle(lang)} >
+                              <button className='uppercase font-[12px] text-white mt-2 hoverIcon' key={index} onClick={()=>clickHandle(lang)} >
                                 {lang}
                               </button>
                             ))}

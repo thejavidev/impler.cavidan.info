@@ -25,7 +25,7 @@ const Partners = () => {
                 <h2 className='text-[#fff] uppercase text-[50px] pt-0 pl-0 pr-0 pb-10 font-bold '>{t("partners")}</h2>
                 <Link to='/' >
                   <div className="w-[160px] mb-10">
-                    <img src={implerLogo} alt="" className='max-w-[100%] h-auto' />
+                    <img src={implerLogo} alt="" className='max-w-[100%] h-auto myfilter' />
                   </div>
                 </Link>
               </Col>
