@@ -3,7 +3,9 @@ import { AiOutlineInstagram,AiFillLinkedin } from 'react-icons/Ai';
 import { BsFacebook } from 'react-icons/Bs';
 import { FaTiktok } from 'react-icons/fa';
 
+
 const companyCard = [
+  
     {
       id: 1,
       name: "Ilqar Mirza",
@@ -429,38 +431,7 @@ const socials=[
     Icon:FaTiktok,
   },
 ]
-const navbarCards =[
-  {
-    id:1,
-    href:"about",
-    name:"haqqimizda"
-  },
-  {
-    id:2,
-    href:"services",
-    name:"Servis"
-  },
-  {
-    id:3,
-    href:"projects",
-    name:"İşlərimiz"
-  },
-  {
-    id:4,
-    href:"company",
-    name:"Komandamız"
-  },
-  {
-    id:5,
-    href:"partners",
-    name:"Partnyorlar"
-  },
-  {
-    id:6,
-    href:"contact",
-    name:"Əlaqə"
-  },
-]
+
 
 export {
   companyCard,
@@ -471,6 +442,5 @@ export {
   partnersData,
   inputCards,
   socials,
-  navbarCards
 }
   

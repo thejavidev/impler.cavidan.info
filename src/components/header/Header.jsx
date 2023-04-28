@@ -1,7 +1,6 @@
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Nav from 'react-bootstrap/Nav';
-import { navbarCards } from '../fakeData/LocalData';
 import { implerLogo } from '../../assets';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -11,6 +10,7 @@ import Upper from './Upper';
 
 const Header = () => {
   const [sticky, setSticky] = useState("");
+  const [t,i18n] =useTranslation("translation");
   useEffect(() => {
     window.addEventListener("scroll", isSticky);
     return () => {
@@ -22,8 +22,42 @@ const Header = () => {
     const stickyClass = scrollTop >= 250 ? "is-sticky" : "";
     setSticky(stickyClass);
   };
+  
+  const navbarCards =[
+    {
+      id:1,
+      href:"about",
+      name: `${t('about')}`,
+    },
+    {
+      id:2,
+      href:"services",
+      name: `${t('service')}`,
+    },
+    {
+      id:3,
+      href:"projects",
+      name: `${t('projects')}`,
+    },
+    {
+      id:4,
+      href:"company",
+      name: `${t('company')}`,
+      
+    },
+    {
+      id:5,
+      href:"partners",
+      name: `${t('partners')}`,
+    },
+    {
+      id:6,
+      href:"contact",
+      name: `${t('contact')}`,
+    },
+  ]
   const classes = `${sticky}`;
-  const [t,i18n] =useTranslation("translation");
+
   const [open, setOpen] = useState(false);
 
   const clickHandle = async (lang) => {

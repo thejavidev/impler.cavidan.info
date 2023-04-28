@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { AiOutlineClose } from 'react-icons/Ai';
 
 
@@ -12,6 +13,7 @@ export default function SwiperCards({ img1, imgHvr, idP, clientNm,lngText ,prd})
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const [t] =useTranslation("translation");
 
     return (
         <>
@@ -51,7 +53,7 @@ export default function SwiperCards({ img1, imgHvr, idP, clientNm,lngText ,prd})
                     </Button>
                     <Row>
                         <Col lg='6' md='6' className='flex flex-col'>
-                            <h3 className='text-white text-[27px] font-bold'>Social Media service for {clientNm}</h3>
+                            <h3 className='text-white text-[27px] font-bold'>Social Media service for {clientNm} </h3>
                             <div className="flex items-center pt-3">
                                 <div className="flex items-center">
                                     <span className='block w-[10px] h-[10px] bg-[#EFC643] rounded-full mr-[10px]'></span>
@@ -63,7 +65,7 @@ export default function SwiperCards({ img1, imgHvr, idP, clientNm,lngText ,prd})
                                 <div className="flex items-center ml-[20px]">
                                     <span className='block w-[10px] h-[10px] bg-[#EFC643] rounded-full mr-[10px]'></span>
                                     <div className="flex items-center">
-                                        <h3 className='text-white opacity-70 text-[14px]'>Period : </h3>
+                                        <h3 className='text-white opacity-70 text-[14px]'>Period :</h3>
                                         <h3 className='pl-[12px] text-white opacity-70 text-[14px]'>{prd}</h3>
                                     </div>
                                 </div>

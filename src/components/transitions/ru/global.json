@@ -1,5 +1,8 @@
 {
-    "cavid":{
-        "text":"ru dili"
-    }
+    "about":"Обо ме",
+    "service":"Севрис",
+    "projects":"Проекты",
+    "company":"Наша команда",
+    "partners":"партнеры",
+    "contact":"Контакт"
 }

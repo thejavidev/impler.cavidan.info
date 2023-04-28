@@ -1,5 +1,8 @@
 {
-    "cavid":{
-        "text":"en dili"
-    }
+    "about":"About",
+    "service":"Service",
+    "projects":"Projects",
+    "company":"Our team",
+    "partners":"partners",
+    "contact":"Contact"
 }

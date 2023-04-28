@@ -1,5 +1,8 @@
 {
-    "cavid":{
-        "text":"az dili"
-    }
+    "about":"Haqqımda",
+    "servis":"Servis",
+    "projects":"İşlərimiz",
+    "company":"Komandamız",
+    "partners":"partnyorlar",
+    "contact":"Əlaqə"
 }
