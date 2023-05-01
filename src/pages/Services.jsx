@@ -53,11 +53,11 @@ const Services = () => {
 
   return (
     <>
-     <section className='bg-[#B9553A] xl:pt-[150px] sm:pt-[50px] xl:pb-[150px] sm:pb-[50px] pl-0 pr-0' id='services'>
+     <section className='bg-[#B9553A] pt-[150px] sm:pt-[50px] pb-[150px] sm:pb-[50px] pl-0 pr-0 md:pl-10 md:pr-10' id='services'>
       <Container>
         <Row>
           <div className="service_text">
-            <h2 className='text-white leading-3 uppercase xl:text-[50px] sm:text-[35px] pb-20 font-bold'>{t("servis")}</h2>
+            <h2 className='text-white leading-3 uppercase text-[50px] sm:text-[35px] pb-20 font-bold'>{t("servis")}</h2>
             <div className="w-[160px] mb-10">
                     <img src={implerLogo} alt="" className='max-w-[100%] h-auto' />
                 </div>

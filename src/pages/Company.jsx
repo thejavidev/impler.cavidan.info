@@ -28,11 +28,11 @@ const Company = () => {
 
   return (
     <>
-      <section className='bg-[#cc67a0] xl:pt-[150px] sm:pt-[50px] xl:pb-[150px] sm:pb-[50px] pb-[150px] pl-0 pr-0' id='company'>
+      <section className='bg-[#cc67a0] pt-[150px] sm:pt-[50px] pb-[150px] sm:pb-[50px] pb-[150px] pl-0 pr-0 md:pl-10 md:pr-10' id='company'>
         <Container >
           <Row>
             <div className='block'>
-              <h2 className='text-white uppercase xl:text-[50px] sm:text-[35px] mb-4 font-bold'>{t("company")}</h2>
+              <h2 className='text-white uppercase text-[50px] sm:text-[35px] mb-4 font-bold'>{t("company")}</h2>
               <div className="w-[160px] mb-10">
                 <img src={implerLogo} alt="" className='max-w-[100%] h-auto' />
               </div>

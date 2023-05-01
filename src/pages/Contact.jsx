@@ -52,11 +52,11 @@ const Contact = () => {
   ]
   return (
     <>
-      <section className='bg-[#34a08d] xl:pt-[150px] sm:pt-[50px] xl:pb-[150px] sm:pb-[50px] pl-0 pr-0' id='contact'>
+      <section className='bg-[#34a08d] pt-[150px] sm:pt-[50px] pb-[150px] sm:pb-[50px] pl-0 pr-0 md:pl-10 md:pr-10' id='contact'>
         <Container>
           <Row>
             <div className='block'>
-              <h2 className='text-white uppercase xl:text-[50px] sm:text-[35px] mb-4 font-bold'>{t("contact")}</h2>
+              <h2 className='text-white uppercase text-[50px] sm:text-[35px] mb-4 font-bold'>{t("contact")}</h2>
               <div className="w-[160px] mb-10">
                   <img src={implerLogo} alt="" className='max-w-[100%] h-auto' />
                 </div>
@@ -101,7 +101,7 @@ const Contact = () => {
               </form>
             </Col>
             <Col lg='6' md='12' className='sm:mt-8'>
-              <div className="text-white xl:pl-8 text-[18px]">
+              <div className="text-white xl:pl-8 md:pl-0 text-[18px]">
                 <p className='mb-3'>We’re always happy to hear you whether you’re interested in our services or working with
                   us. Please fill the form and give us info how we can assist you, or reach us by
                   following contacts.

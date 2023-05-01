@@ -19,18 +19,18 @@ const Partners = () => {
   const [t] = useTranslation("translation");
   return (
     <>
-      <section className='bg-[#EEC542] xl:pt-[150px] sm:pt-[50px] xl:pb-[150px] sm:pb-[50px] pr-0 pl-0' id='partners'>
+      <section className='bg-[#EEC542] pt-[150px] sm:pt-[50px] pb-[150px] sm:pb-[50px] pr-0 pl-0 md:pl-10 md:pr-10' id='partners'>
           <Container>
             <Col lg='12' md='12' className='pb-[40px]'>
-                <h2 className='text-[#fff] uppercase xl:text-[50px] sm:text-[35px] pt-0 pl-0 pr-0 pb-10 font-bold '>{t("partners")}</h2>
+                <h2 className='text-[#fff] uppercase text-[50px] sm:text-[35px] pt-0 pl-0 pr-0 pb-10 font-bold '>{t("partners")}</h2>
                 <div className="w-[160px] mb-10">
                     <img src={implerLogo} alt="" className='max-w-[100%] h-auto myfilter' />
                   </div>
               </Col>
-            <Row className='justify-start xl:gap-[40px]'>
+            <Row className='justify-start xl:gap-[40px] md:gap-0 md:pl-10 md:pr-10'>
                 {
                   items && items?.map((item,index)=>(
-                    <Col lg='2' md='3' sm='4' key={index} >
+                    <Col lg='2' md='3'  sm='4' xs='4' key={index} >
                       <div className="img">
                         <img className='grayscale hover:grayscale-0 transition-all cursor-pointer' src={item.logo} alt="" />
                       </div>

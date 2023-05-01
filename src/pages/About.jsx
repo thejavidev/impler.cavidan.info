@@ -26,11 +26,11 @@ const About = () => {
   
   return (
     <>
-      <section className='bg-[#89a225] xl:pt-[150px] sm:pt-[50px] xl:pb-[150px] sm:pb-[50px] pl-0 pr-0 ' id='about'>
+      <section className='bg-[#89a225] pt-[150px] sm:pt-[50px] pb-[150px] sm:pb-[50px] pl-0 pr-0 md:pl-10 md:pr-10' id='about'>
         <Container>
           <Row>
             <Col lg='12' md='12' className='mb-10 order-[-2]'>
-              <h2 className='text-white xl:text-[50px] sm:text-[35px] font-bold uppercase pt-0 pl-0 pb-10 pr-0 '>
+              <h2 className='text-white text-[50px] sm:text-[35px] font-bold uppercase pt-0 pl-0 pb-10 pr-0 '>
                 {t("about")} 
               </h2>
               <div className="w-[160px]">
