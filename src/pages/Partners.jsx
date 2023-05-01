@@ -9,12 +9,13 @@ import { useTranslation } from 'react-i18next';
 
 
 const Partners = () => {
-  const [nonElement,setNonELement] =useState(15);
-  const slice =partnersData.slice(0,nonElement)
-
-  const loadMore  =()=>{
-    setNonELement(nonElement+nonElement)
+  const STEP = 15;
+  const myapiData =partnersData;
+  const [items, setItems] = useState(myapiData.slice(0, STEP));
+  const loadMore = () => {
+    setItems([...items, ...myapiData.slice(items.length, items.length + STEP)]);
   }
+
   const [t] = useTranslation("translation");
   return (
     <>
@@ -28,7 +29,7 @@ const Partners = () => {
               </Col>
             <Row className='justify-start xl:gap-[40px]'>
                 {
-                  slice && slice?.map((item,index)=>(
+                  items && items?.map((item,index)=>(
                     <Col lg='2' md='3' sm='4' key={index} >
                       <div className="img">
                         <img className='grayscale hover:grayscale-0 transition-all cursor-pointer' src={item.logo} alt="" />
@@ -37,9 +38,10 @@ const Partners = () => {
                   ))
                 }
             </Row>
-            <button onClick={()=>loadMore()} className='flex mt-5 items-center text-white uppercase font-bold text-[20px]'>
+            {(items.length < myapiData.length) &&  <button onClick={()=>loadMore()} className='flex mt-5 items-center text-white uppercase font-bold text-[20px]'>
                <FiChevronDown className='mr-2 font-bold text-[30px] text-[#0a0a0a]' /> {t("more")}
-            </button> 
+            </button>  }
+           
           </Container>
       </section>
     </>

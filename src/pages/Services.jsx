@@ -15,14 +15,17 @@ import LoaderContent from '../components/loader/loaderContent';
 const Services = () => {
   const [loading, setLoading] = useState(false)
   const [isOpened, setIsOpened] = useState(false);
+  const [list, setList] = useState(false)
 
-  function toggle() {
+  function toggle(e) {
     setIsOpened(wasOpened => !wasOpened);
     var elms = document.querySelectorAll('.list');
     [].forEach.call(elms, function(el) {
       el.classList.add("closeDiv");
     });
-   
+    // const selectedIdM =e.currentTarget.id;
+    setList(l => !l);
+    
   }
   function toggle2() {
     setIsOpened(wasOpened => !wasOpened);
@@ -62,8 +65,8 @@ const Services = () => {
           <div className="services-lists" >
             <Row >
               {
-                apidata && apidata?.map((item,index)=>(
-                  <Col xl='3' lg='4' md='6' sm='12' key={index} className='list p-[25px] flex sm:items-center flex-col cursor-pointer' onClick={toggle}>
+                apidata && apidata.map((item,index)=>(
+                  <Col xl='3' lg='4' md='6' sm='12' key={index} className='list p-[25px] flex sm:items-center flex-col cursor-pointer' id={item.id} onClick={toggle}>
                     <div className="image">
                             {
                               loading ? <LoaderContent /> :
@@ -79,7 +82,7 @@ const Services = () => {
                   </Col>
                 ))
               }
-              {isOpened && (
+              {isOpened  && (
                   <div className='relative bg-[#AE4D36] border-none1 p-10' >
                       <div className="close absolute right-4 top-2 cursor-pointer ">
                         <AiFillCloseCircle onClick={toggle2} className='text-[#301710] text-[25px]' />
@@ -90,7 +93,8 @@ const Services = () => {
                             <Col lg={12}>
                               <Nav  className="flex bg-[#B9553A] w-[100%] pr-5 pl-5 justify-start">
                                 
-                                {apidata && apidata?.map((item)=>(
+                                {apidata  && apidata.map((item)=>(
+                                  
                                   <Nav.Item key={item.id} className='list2'>
                                     <Nav.Link to={item.eventKey} eventKey={item.eventKey} className='flex items-center outline-none border-none1 border-radius-none image'>
                                         
@@ -103,7 +107,7 @@ const Services = () => {
                             </Col>
                             <Col lg={12} className='mt-6'>
                               <Tab.Content>
-                                {apidata && apidata?.map((item)=>(
+                                {apidata && apidata.map((item)=>(
                                   <Tab.Pane eventKey={item.eventKey} key={item.id}>
                                       <Row>
                                         <Col lg='8' className='text-white'>
