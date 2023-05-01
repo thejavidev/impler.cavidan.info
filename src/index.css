@@ -156,6 +156,15 @@ html,body{
   opacity: 1;
   visibility: visible;
 }
+.mobilemenu-popup{
+  opacity: 0;
+  visibility: hidden;
+  transition: all .8s cubic-bezier(.77,.2,.05,1);
+}
+.mobilemenu-popup.show{
+    visibility: visible;
+    opacity: 1;
+}
 @media (min-width: 992px){
   .modal-lg, .modal-xl {
     --bs-modal-width: 1030px;

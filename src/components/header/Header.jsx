@@ -5,7 +5,8 @@ import { implerLogo } from '../../assets';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Upper from './Upper';
-
+import MobileMenu from './MobileMenu';
+import { AiOutlineMenu } from 'react-icons/Ai';
 
 
 const Header = () => {
@@ -67,13 +68,16 @@ const Header = () => {
   const langChecker = (lang = "azerbaycan") => {
 		return lang !== localStorage.getItem("i18nextLng");
 	};
-    const langs = ["azerbaycan", "russian", "english"];
-    const myLang = langs.filter(langChecker);
-  
+  const langs = ["azerbaycan", "russian", "english"];
+  const myLang = langs.filter(langChecker);
+
+  const MobileMenuHandler = () => {
+    document.querySelector('.mobilemenu-popup').classList.toggle("show");
+  }
   return (
     <>
       <header id={classes} className={` absolute top-0 left-0 right-0 z-50 w-[100%] pt-4`}>
-        <Container>
+        <Container fluid='lg' className='lg:pl-10 lg:pr-10'>
           <Row>
             <Nav className='items-center justify-between'>
               <div className="logo cursor-pointer">
@@ -83,10 +87,10 @@ const Header = () => {
               </div>
               <div className="nav-menu relative flex">
                 <div className="menu-list">
-                  <ul className='flex items-center w-[100%] justify-end'>
+                  <ul className='flex items-center w-[100%] justify-end lg:hidden'>
                     {
                       navbarCards && navbarCards.map((item, index) => (
-                        <li key={index} className='pr-[15px]'>
+                        <li key={index} className='pr-[15px] '>
                           <a href={`#${item.href}`} className='text-white pr-0 pl-0 font-bold pt-[15px] pb-[15px] text-[16px] uppercase relative transition-all colorHover'>
                             {item.name}
                           </a>
@@ -94,9 +98,12 @@ const Header = () => {
                       ))
                     }
                   </ul>
+                  <div className="btn hidden lg:block">
+                      <button onClick={MobileMenuHandler}><AiOutlineMenu className='text-white text-[30px]' /></button>
+                  </div>
                 </div>
                 <div className="langs">
-                  <div className="languages absolute top-[50px] right-[10px]">
+                  <div className="languages absolute top-[50px] lg:top-[10px] right-[10px] lg:right-20">
                     <Upper
                      toggle={() => setOpen(!open)}
                       switchLang={
@@ -117,6 +124,7 @@ const Header = () => {
           </Row>
         </Container>
       </header>
+      <MobileMenu MobileHandler={MobileMenuHandler} />
     </>
   )
 }
