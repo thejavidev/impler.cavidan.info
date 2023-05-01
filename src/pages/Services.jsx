@@ -15,16 +15,12 @@ import LoaderContent from '../components/loader/loaderContent';
 const Services = () => {
   const [loading, setLoading] = useState(false)
   const [isOpened, setIsOpened] = useState(false);
-  const [list, setList] = useState(false)
-
-  function toggle(e) {
+  function toggle() {
     setIsOpened(wasOpened => !wasOpened);
     var elms = document.querySelectorAll('.list');
     [].forEach.call(elms, function(el) {
       el.classList.add("closeDiv");
     });
-    // const selectedIdM =e.currentTarget.id;
-    setList(l => !l);
     
   }
   function toggle2() {

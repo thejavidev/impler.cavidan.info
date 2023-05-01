@@ -1,68 +1,35 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { implerLogo } from '../assets';
 import { FiChevronDown } from 'react-icons/Fi';
 import SwiperCards from '../components/UI/SwiperCards';
-import { swiperCard } from '../components/fakeData/LocalData';
 import { useTranslation } from 'react-i18next';
-import { useEffect } from 'react';
-import axios from 'axios';
+import { getMultiLang as ml } from '../components/MultiLang';
+import { useSelector } from 'react-redux';
+import LoaderWorks from '../components/loader/LoaderWorks';
+
 
 
 
 const Projects = () => {
   const [t] = useTranslation("translation");
+  const [loading, setLoading] = useState(false)
+  const data = useSelector((state) => state.list);
+  const apidata = data.data?.works;
   const STEP = 9;
-  const myapiData =swiperCard.myDatas;
-  const [items, setItems] = useState(myapiData.slice(0, STEP));
+  const myapiData = apidata;
+  const [items, setItems] = useState(myapiData?.slice(0, STEP));
   const loadMore = () => {
-    setItems([...items, ...myapiData.slice(items.length, items.length + STEP)]);
+    setItems([...items, ...myapiData?.slice(items?.length, items?.length + STEP)]);
   }
-  // const url ='http://api.im.co.az/works-loader'
-  // useEffect(() => {
-  //   fetch(url,{
-  //     method:'POST',
-  //     mode: 'no-cors',
-  //     headers:{
-  //       'Content-type':'application/json',
-  //       'Access-Control-Allow-Origin':'*'
-  //     },
-  //     body: JSON.stringify({
-  //       limit: '6',
-  //       start: '0',
-  //       type: 'api',
-  //     })
-  //   })
-  //   .then(response =>response.json())
-  //   .then(response =>{
-  //     console.log('response',response)
-
-  //   }).catch(e=>{
-  //     console.log('e',e)
-  //   })
-
-  //   const newPost={
-  //     limit:6,
-  //     start:0,
-  //     type:"api"
-  //   }
-  //   fetch(url,{
-  //     method:'POST',
-  //     mode: 'no-cors',
-  //     body:JSON.stringify(newPost),
-  //     headers:{
-  //       'Content-type':'application/json',
-  //       'Access-Control-Allow-Origin':'*'
-  //     },
-  //   })
-  //   .then(response=>response.json())
-  //   .then(json =>console.log(json))
-  //   .catch(err=>console.log('err',err))
-
-  // }, [])
-
+  useEffect(() => {
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+    }, 1500);
+  }, []);
   return (
     <>
 
@@ -77,13 +44,18 @@ const Projects = () => {
                 <img src={implerLogo} alt="" className='max-w-[100%] h-auto' />
               </div>
             </Col>
-            {items && items?.map((item, index) => (
-                <SwiperCards img1={item.image} imgHvr={item.imageOnHover} clientNm={item.clientName} idP={item.id} key={index} lngText={item.longText} prd={item.period} />
-            ))}
-              
-            {(items.length < myapiData.length) && <button onClick={()=>loadMore()} className='flex mt-5 items-center text-white uppercase font-bold text-[20px]'>
-               <FiChevronDown className='mr-2 font-bold text-[30px] text-[#F6C300]' /> {t("more")}
-            </button> }
+            {
+              loading ? <LoaderWorks /> :
+                <>
+                  {items && items?.map((item, index) => (
+                    <SwiperCards img1={item.src} item={item.src} imgHvr={item.logo} imgModal={item.src} clientNm={item.client_name} dataId={item.id} idP={item.id} key={index} titleProject={ml(item.title_az, item.title_ru, item.title_en)} lngText={ml(item.text_az, item.text_ru, item.text_en)} prd={item.period} />
+                  ))}
+                </>
+            }
+
+            {(items?.length < myapiData?.length) && <button onClick={() => loadMore()} className='flex mt-5 items-center text-white uppercase font-bold text-[20px]'>
+              <FiChevronDown className='mr-2 font-bold text-[30px] text-[#F6C300]' /> {t("more")}
+            </button>}
           </Row>
 
         </Container>

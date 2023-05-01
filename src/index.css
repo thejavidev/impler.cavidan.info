@@ -166,8 +166,27 @@ html,body{
     visibility: visible;
     opacity: 1;
 }
+.transitionAll{
+  animation-name: load912355;
+  animation-duration: .9s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.tra{
+  animation-delay: .3s;
+}
+.trb{
+  animation-delay: .6s;
+}
+@keyframes load912355 {
+  0% {
+    transform: translateY(50px) scale(1);
+  }
 
-
+  100% {
+    transform: translateY(10px) scale(1.8) rotate(360deg);
+  }
+}
 .dBlock{
   display: block;
 }

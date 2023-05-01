@@ -6,35 +6,50 @@ import Col from 'react-bootstrap/Col';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { AiOutlineClose } from 'react-icons/Ai';
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import { Navigation } from "swiper";
+import "swiper/css";
+import "swiper/css/navigation";
+import LoaderWorks from '../loader/LoaderWorks';
 
 
-export default function SwiperCards({ img1, imgHvr, idP, clientNm,lngText ,prd}) {
+export default function SwiperCards({ img1, imgHvr, idP, clientNm, dataId, lngText, imgModal, titleProject, prd }) {
 
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    const [t] =useTranslation("translation");
-
+    const [loading, setLoading] = useState(false)
+    const [t] = useTranslation("translation");
+    useEffect(() => {
+        setLoading(true)
+        setTimeout(() => {
+            setLoading(false)
+        }, 1500);
+    }, []);
     return (
         <>
             <Col lg='4' className="flex flex-col gap-20 mb-10 pr-10">
-                <div className="hoverWorks">
-                    <Link className='w-[100%] cursor-pointer' to='/' onClick={handleShow} type="button" data-bs-toggle="modal" data-bs-target={'#mymodal' + idP} >
-                        <div className="image imageWorks relative overflow-hidden">
-                            <img className='w-[100%]' src={img1} alt="" />
-                            <div className="hover-img w-[100%] absolute  transformWorks " >
-                                <img src={imgHvr} alt="" />
-                            </div>
+                {
+                    loading ? <LoaderWorks /> :
+                        <div className="hoverWorks">
+                            <Link className='w-[100%] cursor-pointer' to='/' onClick={handleShow} type="button" data-bs-toggle="modal" data-bs-target={'#mymodal' + idP} >
+                                <div className="image imageWorks relative overflow-hidden">
+                                    <img className='w-[100%]' src={img1} alt="" />
+                                    <div className="hover-img w-[100%] absolute  transformWorks " >
+                                        <img src={imgHvr} alt="" />
+                                    </div>
+                                </div>
+                                <div className="flex items-center pt-[15px] ">
+                                    <span className='block w-[10px] h-[10px] bg-[#EFC643] rounded-full mr-2' ></span>
+                                    <div className=" flex items-center">
+                                        <h3 className="text-white text-[14px] capitalize">{t("client")} :</h3>
+                                        <h3 className="text-white text-[14px] pl-2 capitalize">{clientNm}</h3>
+                                    </div>
+                                </div>
+                            </Link>
                         </div>
-                        <div className="flex items-center pt-[15px] ">
-                            <span className='block w-[10px] h-[10px] bg-[#EFC643] rounded-full mr-2' ></span>
-                            <div className=" flex items-center">
-                                <h3 className="text-white text-[14px] capitalize">{t("client")} :</h3>
-                                <h3 className="text-white text-[14px] pl-2 capitalize">{clientNm}</h3>
-                            </div>
-                        </div>
-                    </Link>
-                </div>
+                }
             </Col>
             <Modal
                 show={show}
@@ -44,17 +59,17 @@ export default function SwiperCards({ img1, imgHvr, idP, clientNm,lngText ,prd})
                 keyboard={false}
                 centered
                 id={'mymodal' + idP}
-                
-                
+
+
             >
 
                 <Modal.Body className='relative bg-[#234656] p-[40px]'>
                     <Button onClick={handleClose} className='absolute right-1 top-1 border-none1 text-[25px] btn'>
-                        <AiOutlineClose   /> 
+                        <AiOutlineClose />
                     </Button>
                     <Row>
                         <Col lg='6' md='12' className='flex flex-col'>
-                            <h3 className='text-white text-[27px] font-bold'>Social Media service for {clientNm} </h3>
+                            <h3 className='text-white text-[27px] font-bold'>{titleProject} </h3>
                             <div className="flex items-center pt-3">
                                 <div className="flex items-center">
                                     <span className='block w-[10px] h-[10px] bg-[#EFC643] rounded-full mr-[10px]'></span>
@@ -70,14 +85,20 @@ export default function SwiperCards({ img1, imgHvr, idP, clientNm,lngText ,prd})
                                         <h3 className='pl-[12px] text-white opacity-70 text-[14px] capitalize'>{prd}</h3>
                                     </div>
                                 </div>
-                                
+
                             </div>
                             <div className="text-white pt-3">
                                 {lngText}
                             </div>
                         </Col>
-                        <Col lg='6' md='12' className='md:pt-6 pt-767'>
-                            <img src={img1} className='w-[100%] h-[100%] object-cover' alt="" />
+                        <Col lg='6' md='12' className='md:pt-6 pt-767 h-[100%]'>
+                            <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+                                <SwiperSlide>
+                                    <img src={img1} className='w-[100%] h-[400px] object-cover' alt="" />
+                                </SwiperSlide>
+
+                            </Swiper>
+
                         </Col>
                     </Row>
                 </Modal.Body>
