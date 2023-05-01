@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Upper from './Upper';
 import MobileMenu from './MobileMenu';
-import { AiOutlineMenu } from 'react-icons/Ai';
+import { AiOutlineMenu ,AiOutlineClose} from 'react-icons/Ai';
 
 
 const Header = () => {
@@ -73,7 +73,14 @@ const Header = () => {
 
   const MobileMenuHandler = () => {
     document.querySelector('.mobilemenu-popup').classList.toggle("show");
+    // document.querySelector('.btnOpen').classList.add("dBlockNone");
+    // document.querySelector('.btnClose').classList.add("dBlock");
   }
+  // const MobileMenuHandlerClose = () => {
+  //   document.querySelector('.mobilemenu-popup').classList.remove("show");
+  //   document.querySelector('.btnOpen').classList.remove("dBlockNone");
+  //   document.querySelector('.btnClose').classList.remove("dBlock");
+  // }
   return (
     <>
       <header id={classes} className={` absolute top-0 left-0 right-0 z-50 w-[100%] pt-4`}>
@@ -98,8 +105,9 @@ const Header = () => {
                       ))
                     }
                   </ul>
-                  <div className="btn hidden lg:block">
-                      <button onClick={MobileMenuHandler}><AiOutlineMenu className='text-white text-[30px]' /></button>
+                  <div className="btn hidden lg:block outline-none border-none shadow-none">
+                      <button className='outline-none border-none shadow-none btnOpen' onClick={MobileMenuHandler}><AiOutlineMenu className='text-white text-[30px] outline-none border-none shadow-none' /></button>
+                      {/* <button className='outline-none border-none shadow-none hidden btnClose' onClick={MobileMenuHandlerClose}><AiOutlineClose className='text-white text-[30px] outline-none border-none shadow-none' /></button> */}
                   </div>
                 </div>
                 <div className="langs">

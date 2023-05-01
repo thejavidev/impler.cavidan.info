@@ -161,9 +161,18 @@ html,body{
   visibility: hidden;
   transition: all .8s cubic-bezier(.77,.2,.05,1);
 }
+
 .mobilemenu-popup.show{
     visibility: visible;
     opacity: 1;
+}
+
+
+.dBlock{
+  display: block;
+}
+.dBlockNone{
+  display: none;
 }
 @media (min-width: 992px){
   .modal-lg, .modal-xl {
