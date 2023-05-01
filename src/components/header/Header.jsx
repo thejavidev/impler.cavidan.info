@@ -32,7 +32,7 @@ const Header = () => {
     {
       id:2,
       href:"services",
-      name: `${t('service')}`,
+      name: `${t('servis')}`,
     },
     {
       id:3,
@@ -103,7 +103,7 @@ const Header = () => {
                         open && (
                           <div className="absolute  mt-6 right-[7px] top-1 h-[50px] flex flex-col text-left items-end">
                             {myLang.map((lang, index) => (
-                              <button className='uppercase font-[12px] text-white mt-2 hoverIcon' key={index} onClick={()=>clickHandle(lang)} >
+                              <button className='uppercase text-[12px] text-white mt-2 hoverIcon' key={index} onClick={()=>clickHandle(lang)} >
                                 {lang}
                               </button>
                             ))}

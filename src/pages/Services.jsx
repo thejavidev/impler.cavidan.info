@@ -2,16 +2,18 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { implerLogo } from '../assets';
-import { useState } from 'react';
 import { AiFillCloseCircle } from 'react-icons/Ai';
 import Tab from 'react-bootstrap/Tab';
-import { Link } from "react-router-dom";
 import Nav from 'react-bootstrap/Nav';
-import { services,tabsIcon,tabsContent } from '../components/fakeData/LocalData';
 import { useTranslation } from 'react-i18next';
+import { useEffect,useState } from 'react';
+import { getMultiLang as ml } from '../components/MultiLang';
+import { useDispatch, useSelector } from 'react-redux';
+import { loadposts } from "../components/store/posts";
+import LoaderContent from '../components/loader/loaderContent';
 
 const Services = () => {
-
+  const [loading, setLoading] = useState(false)
   const [isOpened, setIsOpened] = useState(false);
 
   function toggle() {
@@ -34,30 +36,45 @@ const Services = () => {
     
   }
   const [t] = useTranslation("translation");
+  const dispatch = useDispatch();
+  const data = useSelector((state) => state.list);
+  const apidata =data.data?.services_section.serviceslists;
+  useEffect(() => {
+      dispatch(loadposts());
+      setLoading(true)
+      setTimeout(() => {
+        setLoading(false)
+      }, 100);
+  }, [dispatch]);
+
+
   return (
     <>
-     <section className='bg-[#B9553A] pt-[150px] pb-[150px] pl-0 pr-0' id='services'>
+     <section className='bg-[#B9553A] xl:pt-[150px] sm:pt-[50px] xl:pb-[150px] sm:pb-[50px] pl-0 pr-0' id='services'>
       <Container>
         <Row>
           <div className="service_text">
-            <h2 className='text-white leading-3 uppercase text-[50px] pb-20 font-bold'>{t("servis")}</h2>
-            <Link to='#home' >
-                <div className="w-[160px] mb-10">
+            <h2 className='text-white leading-3 uppercase xl:text-[50px] sm:text-[35px] pb-20 font-bold'>{t("servis")}</h2>
+            <div className="w-[160px] mb-10">
                     <img src={implerLogo} alt="" className='max-w-[100%] h-auto' />
                 </div>
-            </Link>
           </div>
           <div className="services-lists" >
             <Row >
               {
-                services && services?.map((item,index)=>(
-                  <Col xl='3' lg='4' md='6' sm='12' key={index} className='list p-[25px] cursor-pointer' onClick={toggle}>
+                apidata && apidata?.map((item,index)=>(
+                  <Col xl='3' lg='4' md='6' sm='12' key={index} className='list p-[25px] flex sm:items-center flex-col cursor-pointer' onClick={toggle}>
                     <div className="image">
-                            <img className='first w-[70px]' src={item.img1} alt={item.alt} />
-                            <img className='second w-[70px] hidden' src={item.img2} alt={item.alt} />
+                            {
+                              loading ? <LoaderContent /> :
+                              <>
+                                <img className='first w-[70px]' src={item.src} alt={item.alt} />
+                                <img className='second w-[70px] hidden' src={item.src_hover} alt={item.alt} />
+                              </>
+                            }
                         </div>
                         <div className="title mt-10">
-                          <h3 className='w-[50%] text-[20px] text-white'>{item.titleh3}</h3>
+                            <h3 className='xl:w-[50%] sm:w-[100%] text-[20px] text-white'>{ml(item.title_az,item.title_ru,item.title_en)}</h3>
                         </div>
                   </Col>
                 ))
@@ -71,28 +88,31 @@ const Services = () => {
                       <Tab.Container id="left-tabs-example" defaultActiveKey="first" className=''> 
                           <Row>
                             <Col lg={12}>
-                              <Nav  className="flex bg-[#B9553A] w-[100%] pr-5 pl-5">
+                              <Nav  className="flex bg-[#B9553A] w-[100%] pr-5 pl-5 justify-start">
                                 
-                                {tabsIcon && tabsIcon?.map((item)=>(
-                                  <Nav.Item key={item.id} >
-                                    <Nav.Link eventKey={item.eventKey} className='flex items-center outline-none border-none1 border-radius-none'>
+                                {apidata && apidata?.map((item)=>(
+                                  <Nav.Item key={item.id} className='list2'>
+                                    <Nav.Link to={item.eventKey} eventKey={item.eventKey} className='flex items-center outline-none border-none1 border-radius-none image'>
                                         
-                                        <img src={item.img1} className='w-[70px]' alt="" />
+                                        <img src={item.src} className='first w-[70px]' alt="" />
+                                        <img className='second w-[70px] hidden' src={item.src_hover} alt={item.alt} />
                                     </Nav.Link>
                                   </Nav.Item>
                                 ))}
                               </Nav>
                             </Col>
-                            <Col lg={12} className='mt-10'>
+                            <Col lg={12} className='mt-6'>
                               <Tab.Content>
-                                {tabsContent && tabsContent?.map((item)=>(
+                                {apidata && apidata?.map((item)=>(
                                   <Tab.Pane eventKey={item.eventKey} key={item.id}>
                                       <Row>
-                                        <Col lg='8'>
-                                          {item.titleLeft}
+                                        <Col lg='8' className='text-white'>
+                                          <p className='text-white text-[24px] pt-[0px] pl-0 pr-0 pb-[10px] font-bold'> {ml(item.title_az,item.title_ru,item.title_en)}</p>
+                                            <div dangerouslySetInnerHTML={{ __html: ml(item.desc_left_az,item.desc_left_ru,item.desc_left_en)}}></div>
                                         </Col>
-                                        <Col lg='4'>
-                                          {item.titleRight}
+                                        <Col lg='4' className='text-white'>
+                                        <div dangerouslySetInnerHTML={{ __html: ml(item.desc_right_az,item.desc_right_ru,item.desc_right_en)}}></div>
+                                          
                                         </Col>
                                       </Row>
                                   </Tab.Pane>

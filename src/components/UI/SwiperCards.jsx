@@ -19,7 +19,7 @@ export default function SwiperCards({ img1, imgHvr, idP, clientNm,lngText ,prd})
         <>
             <Col lg='4' className="flex flex-col gap-20 mb-10 pr-10">
                 <div className="hoverWorks">
-                    <Link className='w-[100%] cursor-pointer' onClick={handleShow} type="button" data-bs-toggle="modal" data-bs-target={'#mymodal' + idP} >
+                    <Link className='w-[100%] cursor-pointer' to='/' onClick={handleShow} type="button" data-bs-toggle="modal" data-bs-target={'#mymodal' + idP} >
                         <div className="image imageWorks relative overflow-hidden">
                             <img className='w-[100%]' src={img1} alt="" />
                             <div className="hover-img w-[100%] absolute  transformWorks " >
@@ -44,7 +44,8 @@ export default function SwiperCards({ img1, imgHvr, idP, clientNm,lngText ,prd})
                 keyboard={false}
                 centered
                 id={'mymodal' + idP}
-
+                
+                
             >
 
                 <Modal.Body className='relative bg-[#234656] p-[40px]'>
@@ -52,7 +53,7 @@ export default function SwiperCards({ img1, imgHvr, idP, clientNm,lngText ,prd})
                         <AiOutlineClose   /> 
                     </Button>
                     <Row>
-                        <Col lg='6' md='6' className='flex flex-col'>
+                        <Col lg='6' md='12' className='flex flex-col'>
                             <h3 className='text-white text-[27px] font-bold'>Social Media service for {clientNm} </h3>
                             <div className="flex items-center pt-3">
                                 <div className="flex items-center">
@@ -75,7 +76,7 @@ export default function SwiperCards({ img1, imgHvr, idP, clientNm,lngText ,prd})
                                 {lngText}
                             </div>
                         </Col>
-                        <Col lg='6' md='6'>
+                        <Col lg='6' md='12' className='md:pt-6 pt-767'>
                             <img src={img1} className='w-[100%] h-[100%] object-cover' alt="" />
                         </Col>
                     </Row>

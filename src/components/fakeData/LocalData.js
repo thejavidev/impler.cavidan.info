@@ -187,103 +187,115 @@ const services =[
     id:1,
     img1:servicesPng,
     img2:servivesGif,
+    name:"Home 1",
     alt:"test 1",
-    titleh3:"Social Media Marketing"
-  },
-  {
-    id:2,
-    img1:servicesPng,
-    img2:servivesGif,
-    alt:"test 2",
-    titleh3:"Social Media Marketing"
-  },
-  {
-    id:3,
-    img1:servicesPng,
-    img2:servivesGif,
-    alt:"test 3",
-    titleh3:"Social Media Marketing"
-  },
-  {
-    id:3,
-    img1:servicesPng,
-    img2:servivesGif,
-    alt:"test 3",
-    titleh3:"Social Media Marketing"
-  },
-  {
-    id:4,
-    img1:servicesPng,
-    img2:servivesGif,
-    alt:"test 3",
-    titleh3:"Social Media Marketing"
-  },
-  {
-    id:5,
-    img1:servicesPng,
-    img2:servivesGif,
-    alt:"test 3",
-    titleh3:"Social Media Marketing"
-  },
-  {
-    id:6,
-    img1:servicesPng,
-    img2:servivesGif,
-    alt:"test 3",
-    titleh3:"Social Media Marketing"
-  },
-  {
-    id:7,
-    img1:servicesPng,
-    img2:servivesGif,
-    alt:"test 3",
-    titleh3:"Social Media Marketing"
-  },
-  {
-    id:8,
-    img1:servicesPng,
-    img2:servivesGif,
-    alt:"test 3",
-    titleh3:"Social Media Marketing"
-  },
-  {
-    id:9,
-    img1:servicesPng,
-    img2:servivesGif,
-    alt:"test 3",
-    titleh3:"Social Media Marketing"
-  },
-]
-const tabsIcon =[
-  {
-    id:1,
-    img1:servicesPng,
-    img2:servivesGif,
-    eventKey:"first",
-    name:"Home 1"
-  },
-  {
-    id:2,
-    img1:servicesPng,
-    img2:servivesGif,
-    eventKey:"second",
-    name:"Home 2"
-  },
-]
-const tabsContent =[
-  {
-    id:1,
+    titleh3:"Social Media Marketing",
     eventKey:"first",
     titleLeft:"1-Lorem ipsum dolor sit amet consectetur adipisicing elit. Non odio id assumenda sunt ab, modi vitae architecto aperiam, quaerat veniam earum illo veritatis provident libero eveniet doloremque minus sit rem.",
     titleRight:"2-Lorem ipsum dolor sit amet consectetur adipisicing elit. Non odio id assumenda sunt ab, modi vitae architecto aperiam, quaerat veniam earum illo veritatis provident libero eveniet doloremque minus sit rem."
   },
   {
     id:2,
+    img1:servicesPng,
+    img2:servivesGif,
+    name:"Home 2",
+    alt:"test 2",
+    titleh3:"Social Media Marketing 2",
     eventKey:"second",
     titleLeft:"3-Lorem ipsum dolor sit amet consectetur adipisicing elit. Non odio id assumenda sunt ab, modi vitae architecto aperiam, quaerat veniam earum illo veritatis provident libero eveniet doloremque minus sit rem.",
     titleRight:"4-Lorem ipsum dolor sit amet consectetur adipisicing elit. Non odio id assumenda sunt ab, modi vitae architecto aperiam, quaerat veniam earum illo veritatis provident libero eveniet doloremque minus sit rem."
   },
+  {
+    id:3,
+    img1:servicesPng,
+    img2:servivesGif,
+    name:"Home 3",
+    eventKey:"three",
+    alt:"test 3",
+    titleh3:"Social Media Marketing 3",
+    titleLeft:"5-Lorem ipsum dolor sit amet consectetur adipisicing elit. Non odio id assumenda sunt ab, modi vitae architecto aperiam, quaerat veniam earum illo veritatis provident libero eveniet doloremque minus sit rem.",
+    titleRight:"6-Lorem ipsum dolor sit amet consectetur adipisicing elit. Non odio id assumenda sunt ab, modi vitae architecto aperiam, quaerat veniam earum illo veritatis provident libero eveniet doloremque minus sit rem."
+  },
+  {
+    id:4,
+    img1:servicesPng,
+    img2:servivesGif,
+    name:"Home 4",
+    eventKey:"four",
+    alt:"test 3",
+    titleh3:"Social Media Marketing 4",
+    titleLeft:"7-Lorem ipsum dolor sit amet consectetur adipisicing elit. Non odio id assumenda sunt ab, modi vitae architecto aperiam, quaerat veniam earum illo veritatis provident libero eveniet doloremque minus sit rem.",
+    titleRight:"8-Lorem ipsum dolor sit amet consectetur adipisicing elit. Non odio id assumenda sunt ab, modi vitae architecto aperiam, quaerat veniam earum illo veritatis provident libero eveniet doloremque minus sit rem."
+  },
+  {
+    id:5,
+    img1:servicesPng,
+    img2:servivesGif,
+    name:"Home 5",
+    eventKey:"five",
+    alt:"test 3",
+    titleh3:"Social Media Marketing 5",
+    titleLeft:"9-Lorem ipsum dolor sit amet consectetur adipisicing elit. Non odio id assumenda sunt ab, modi vitae architecto aperiam, quaerat veniam earum illo veritatis provident libero eveniet doloremque minus sit rem.",
+    titleRight:"10-Lorem ipsum dolor sit amet consectetur adipisicing elit. Non odio id assumenda sunt ab, modi vitae architecto aperiam, quaerat veniam earum illo veritatis provident libero eveniet doloremque minus sit rem."
+  },
+  {
+    id:6,
+    img1:servicesPng,
+    img2:servivesGif,
+    name:"Home 6",
+    eventKey:"six",
+    alt:"test 3",
+    titleh3:"Social Media Marketing 6",
+    titleLeft:"11-Lorem ipsum dolor sit amet consectetur adipisicing elit. Non odio id assumenda sunt ab, modi vitae architecto aperiam, quaerat veniam earum illo veritatis provident libero eveniet doloremque minus sit rem.",
+    titleRight:"12-Lorem ipsum dolor sit amet consectetur adipisicing elit. Non odio id assumenda sunt ab, modi vitae architecto aperiam, quaerat veniam earum illo veritatis provident libero eveniet doloremque minus sit rem."
+  },
+  {
+    id:7,
+    img1:servicesPng,
+    img2:servivesGif,
+    name:"Home 7",
+    alt:"test 3",
+    eventKey:"seven",
+    titleh3:"Social Media Marketing 7",
+    titleLeft:"13-Lorem ipsum dolor sit amet consectetur adipisicing elit. Non odio id assumenda sunt ab, modi vitae architecto aperiam, quaerat veniam earum illo veritatis provident libero eveniet doloremque minus sit rem.",
+    titleRight:"14-Lorem ipsum dolor sit amet consectetur adipisicing elit. Non odio id assumenda sunt ab, modi vitae architecto aperiam, quaerat veniam earum illo veritatis provident libero eveniet doloremque minus sit rem."
+  },
+  {
+    id:8, 
+    eventKey:"eight",
+    name:"Home 8",
+    img1:servicesPng,
+    img2:servivesGif,
+    alt:"test 3",
+    titleh3:"Social Media Marketing 8",
+    titleLeft:"15-Lorem ipsum dolor sit amet consectetur adipisicing elit. Non odio id assumenda sunt ab, modi vitae architecto aperiam, quaerat veniam earum illo veritatis provident libero eveniet doloremque minus sit rem.",
+    titleRight:"16-Lorem ipsum dolor sit amet consectetur adipisicing elit. Non odio id assumenda sunt ab, modi vitae architecto aperiam, quaerat veniam earum illo veritatis provident libero eveniet doloremque minus sit rem."
+  },
+  {
+    id:9,
+    eventKey:"nine",
+    name:"Home 9",
+    img1:servicesPng,
+    img2:servivesGif,
+    alt:"test 3",
+    titleh3:"Social Media Marketing 9",
+    titleLeft:"17-Lorem ipsum dolor sit amet consectetur adipisicing elit. Non odio id assumenda sunt ab, modi vitae architecto aperiam, quaerat veniam earum illo veritatis provident libero eveniet doloremque minus sit rem.",
+    titleRight:"18-Lorem ipsum dolor sit amet consectetur adipisicing elit. Non odio id assumenda sunt ab, modi vitae architecto aperiam, quaerat veniam earum illo veritatis provident libero eveniet doloremque minus sit rem."
+  },
+  {
+    id:10,
+    name:"Home 10",
+    img1:servicesPng,
+    img2:servivesGif,
+    eventKey:"ten",
+    alt:"test 3",
+    titleh3:"Social Media Marketing 10",
+    titleLeft:"19-Lorem ipsum dolor sit amet consectetur adipisicing elit. Non odio id assumenda sunt ab, modi vitae architecto aperiam, quaerat veniam earum illo veritatis provident libero eveniet doloremque minus sit rem.",
+    titleRight:"20-Lorem ipsum dolor sit amet consectetur adipisicing elit. Non odio id assumenda sunt ab, modi vitae architecto aperiam, quaerat veniam earum illo veritatis provident libero eveniet doloremque minus sit rem."
+  },
 ]
+
+
 const partnersData=[
   {
     id:1,
@@ -395,10 +407,7 @@ export {
   companyCard,
   swiperCard,
   services,
-  tabsIcon,
-  tabsContent,
   partnersData,
-
   socials,
 }
   
