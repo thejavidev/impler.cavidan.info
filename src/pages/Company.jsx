@@ -28,7 +28,7 @@ const Company = () => {
 
   return (
     <>
-      <section className='bg-[#cc67a0] pt-[150px] sm:pt-[50px] pb-[150px] sm:pb-[50px] pb-[150px] pl-0 pr-0 md:pl-10 md:pr-10' id='company'>
+      <section className='bg-[#cc67a0] pt-[150px] sm:pt-[50px] pb-[150px] sm:pb-[50px] pl-0 pr-0 md:pl-10 md:pr-10' id='company'>
         <Container >
           <Row>
             <div className='block'>

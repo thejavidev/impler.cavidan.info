@@ -20,11 +20,6 @@ const Projects = () => {
   const loadMore = () => {
     setItems([...items, ...myapiData.slice(items.length, items.length + STEP)]);
   }
-  // const loadMore = () => {
-  //   setNonELement(nonElement + nonElement)
-  // }
-
-
   // const url ='http://api.im.co.az/works-loader'
   // useEffect(() => {
   //   fetch(url,{
