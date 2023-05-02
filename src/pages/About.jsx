@@ -32,7 +32,7 @@ const About = () => {
         <Container>
           <Row>
             <Col lg='12' md='12' className='mb-10 order-[-2] p-0 sm:mb-0'>
-              <h2 className='text-white text-[50px] sm:text-[30px] font-bold uppercase pt-0 pl-0 pb-10 pr-0 '>
+              <h2 className='text-white text-[50px] sm:text-[25px] font-bold uppercase pt-0 pl-0 pb-10 pr-0 '>
                 {t("about")}
               </h2>
               <div className="w-[160px] sm:w-[100px]">

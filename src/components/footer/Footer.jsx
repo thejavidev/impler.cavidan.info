@@ -18,7 +18,7 @@ const Footer = () => {
       <footer className='bg-[#34a08d] pt-[20px] pb-[20px] pl-0 pr-0'>
         <Container>
           <Row className='justify-between lg:justify-center'>
-            <Col className="text-white text-[16px] lg:text-center lg:mb-6" lg='6' md='12'>
+            <Col className="text-white text-[16px] md:text-[14px] lg:text-center lg:mb-6" lg='6' md='12'>
               {year}. {t("footer")} © .
             </Col>
             <Col className="flex justify-end lg:justify-center lg:mb-4" lg='6' md='12'>

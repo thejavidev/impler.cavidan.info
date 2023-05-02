@@ -10,7 +10,7 @@ html,body{
   overflow-x: hidden;
 }
 ::-webkit-scrollbar{
-  width: 0px;
+  width: 6px;
 }
 input:-webkit-autofill{
   -webkit-text-fill-color: #fff !important;

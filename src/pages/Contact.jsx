@@ -183,17 +183,17 @@ const Contact = () => {
             </Col>
             <Col lg='6' md='12' className='lg:mt-8'>
               <div className="text-white xl:pl-8 lg:pl-0 text-[18px]">
-                <p className='mb-3'>{ml(myapi?.contact_text_az,myapi?.contact_text_ru,myapi?.contact_text_en)}
+                <p className='mb-3 md:text-[15px]'>{ml(myapi?.contact_text_az,myapi?.contact_text_ru,myapi?.contact_text_en)}
                 </p>
-                <p className='flex items-center mb-2'>
+                <p className='flex items-center mb-2 md:text-[15px]'>
                   {t('email')} :
-                  <a href={`mailto:${myapi?.email}`} className='pl-2'>
+                  <a href={`mailto:${myapi?.email}`} className='pl-2 md:text-[15px]'>
                     {myapi?.email}
                   </a>
                 </p>
-                <p className='flex items-center'>
+                <p className='flex items-center md:text-[15px]'>
                   {t('phone')} :
-                  <a href={`tel:${myapi?.phone}`} className='pl-2'>
+                  <a href={`tel:${myapi?.phone}`} className='pl-2 md:text-[15px]'>
                    {myapi?.phone}
                   </a>
                 </p>

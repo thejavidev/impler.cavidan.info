@@ -63,14 +63,14 @@ export default function SwiperCards({ img1, imgHvr, idP, clientNm, imagesAll, ln
 
             >
 
-                <Modal.Body className='relative bg-[#234656] p-[40px]'>
+                <Modal.Body className='relative bg-[#234656] p-[40px] md:p-[15px]'>
                     <Button onClick={handleClose} className='absolute right-1 top-1 border-none1 text-[25px] btn'>
                         <AiOutlineClose />
                     </Button>
                     <Row>
                         <Col lg='6' md='12' className='flex flex-col'>
-                            <h3 className='text-white text-[27px] font-bold'>{titleProject} </h3>
-                            <div className="flex items-center pt-3">
+                            <h3 className='text-white text-[27px] md:text-[18px] font-bold'>{titleProject} </h3>
+                            <div className="flex items-center pt-3 md:flex-col md:items-start">
                                 <div className="flex items-center">
                                     <span className='block w-[10px] h-[10px] bg-[#EFC643] rounded-full mr-[10px]'></span>
                                     <div className="flex items-center">
@@ -78,7 +78,7 @@ export default function SwiperCards({ img1, imgHvr, idP, clientNm, imagesAll, ln
                                         <h3 className='pl-[12px] text-white opacity-70 text-[14px] capitalize'>{clientNm}</h3>
                                     </div>
                                 </div>
-                                <div className="flex items-center ml-[20px]">
+                                <div className="flex items-center ml-[20px] md:ml-0 md:mt-3">
                                     <span className='block w-[10px] h-[10px] bg-[#EFC643] rounded-full mr-[10px]'></span>
                                     <div className="flex items-center">
                                         <h3 className='text-white opacity-70 text-[14px] capitalize'>{t("period")} :</h3>
@@ -87,7 +87,7 @@ export default function SwiperCards({ img1, imgHvr, idP, clientNm, imagesAll, ln
                                 </div>
 
                             </div>
-                            <div className="text-white pt-3">
+                            <div className="text-white pt-3 md:text-[14px] ">
                                 {lngText}
                             </div>
                         </Col>
@@ -98,7 +98,7 @@ export default function SwiperCards({ img1, imgHvr, idP, clientNm, imagesAll, ln
                                         <SwiperSlide key={index}>
                                            {
                                             loading ? <LoaderWorks /> :
-                                            <img src={item.src} className='w-[100%] h-[400px] object-cover' alt="" />
+                                            <img src={item.src} className='w-[100%] h-[400px] md:h-auto object-cover' alt="" />
                                            }
                                         </SwiperSlide>
                                     ))

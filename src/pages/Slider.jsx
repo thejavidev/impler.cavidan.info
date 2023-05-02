@@ -62,14 +62,14 @@ const Slider = () => {
           </div>
           <div className="flex flex-col z-10 absolute top-48 sm:top-[20rem] ">
             <Container >
-              <div className="text-[80px] lg:text-[60px] md:text-[40px] text-white circle" 
+              <div className="text-[80px] lg:text-[60px] md:text-[40px] xs:text-[30px] text-white circle" 
                 dangerouslySetInnerHTML={{ __html: apidata && ml(apidata.home_text_az, apidata.home_text_ru, apidata.home_text_en)}}
               >
              
               </div>
               <div className="bottom-text flex items-center ">
-                <FaMapMarkerAlt className="text-[#f6c300] text-[35px] sm:tex-[25px] "  />
-                <h6   className="text-[45px] sm:text-[30px] text-[#f6c300] leading-[90px] pl-3 font-bold"> {apidata && ml(apidata.home_loc_text_az,apidata.home_loc_text_ru,apidata.home_loc_text_en)}</h6>
+                <FaMapMarkerAlt className="text-[#f6c300] text-[35px] sm:tex-[25px] xs:text-[20px]"  />
+                <h6   className="text-[45px] sm:text-[30px] xs:text-[20px] text-[#f6c300] leading-[90px] pl-3 font-bold"> {apidata && ml(apidata.home_loc_text_az,apidata.home_loc_text_ru,apidata.home_loc_text_en)}</h6>
               </div>
             </Container>
           </div>
