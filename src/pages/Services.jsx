@@ -49,7 +49,7 @@ const Services = () => {
 
   return (
     <>
-     <section className='bg-[#B9553A] pt-[150px] sm:pt-[50px] pb-[150px] sm:pb-[50px] pl-0 pr-0 md:pl-10 md:pr-10' id='services'>
+     <div className='bg-[#B9553A] pt-[150px] sm:pt-[50px] pb-[150px] sm:pb-[50px] pl-0 pr-0 md:pl-10 md:pr-10' id='services'>
       <Container>
         <Row>
           <div className="service_text">
@@ -129,7 +129,7 @@ const Services = () => {
           </div>
         </Row>
       </Container>
-    </section> 
+    </div> 
     </>
   )
 }

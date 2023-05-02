@@ -24,7 +24,7 @@ const Slider = () => {
   }, [dispatch]);
   return (
     <>
-      <section className="relative w-[100%] h-[100%]" id="home">
+      <div className="relative w-[100%] h-[100%]" id="home">
         <Row>
           <div className="video-inner h-[100vh] w-[100%] relative">
             {
@@ -40,7 +40,7 @@ const Slider = () => {
           </div>
           <div className="flex flex-col z-10 absolute top-48 sm:top-[20rem] ">
             <Container >
-              <div className="text-[80px] sm:text-[40px] text-white" 
+              <div className="text-[80px] lg:text-[60px] md:text-[40px] text-white" 
               
               dangerouslySetInnerHTML={{ __html: apidata && ml(apidata.home_text_az, apidata.home_text_ru, apidata.home_text_en)}}>
               
@@ -52,7 +52,7 @@ const Slider = () => {
             </Container>
           </div>
         </Row>
-      </section>
+      </div>
     </>
   )
 }

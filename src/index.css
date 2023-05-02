@@ -12,6 +12,19 @@ html,body{
 ::-webkit-scrollbar{
   width: 0px;
 }
+input:-webkit-autofill{
+  -webkit-text-fill-color: #fff !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+}
+input{
+  caret-color: #fff;
+}
 .closeDiv{
   display: none !important;
 }
@@ -91,8 +104,8 @@ html,body{
 }
 #is-sticky .languages {
   position: initial;
- 
 }
+
 .colorHover:hover::after{
   visibility: visible;
   transform: scaleX(1);
@@ -187,6 +200,10 @@ html,body{
     transform: translateY(10px) scale(1.8) rotate(360deg);
   }
 }
+.opacityBtn{
+  opacity: .7;
+  cursor: no-drop !important;
+}
 .dBlock{
   display: block;
 }
@@ -215,5 +232,8 @@ html,body{
 @media screen and (max-width:767px) {
   .pt-767{
     padding-top: 20px;
+  }
+  #is-sticky .languages {
+    padding-top: 7px;
   }
 }

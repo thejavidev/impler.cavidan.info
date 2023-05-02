@@ -7,7 +7,6 @@ import { useEffect } from 'react';
 import { getMultiLang as ml } from '../components/MultiLang';
 import { useDispatch, useSelector } from 'react-redux';
 import { loadposts } from "../components/store/posts";
-import { useState } from 'react';
 
 const Company = () => {
   const [t] = useTranslation("translation");
@@ -19,16 +18,11 @@ const Company = () => {
     dispatch(loadposts());
   }, [dispatch]);
 
-  // const STEP = 2;
-  // const myapiData = apidata;
-  // const [items, setItems] = useState(myapiData?.slice(0, STEP));
-  // const loadMore = () => {
-  //   setItems([...items, ...myapiData?.slice(items?.length, items?.length + STEP)]);
-  // }
+ 
 
   return (
     <>
-      <section className='bg-[#cc67a0] pt-[150px] sm:pt-[50px] pb-[150px] sm:pb-[50px] pl-0 pr-0 md:pl-10 md:pr-10' id='company'>
+      <div className='bg-[#cc67a0] pt-[150px] sm:pt-[50px] pb-[150px] sm:pb-[50px] pl-0 pr-0 md:pl-10 md:pr-10' id='company'>
         <Container >
           <Row>
             <div className='block'>
@@ -54,14 +48,10 @@ const Company = () => {
                   </Col>
                 ))
               }
-              
             </div>
-            {/* {(items?.length < myapiData?.length) && <button onClick={() => loadMore()} className='flex mt-5 items-center text-white uppercase font-bold text-[20px]'>
-                {t("more")}
-              </button>} */}
           </Row>
         </Container>
-      </section>
+      </div>
     </>
   )
 }

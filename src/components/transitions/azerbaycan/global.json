@@ -10,10 +10,17 @@
     "more":"daha çox",
     "works":"İşlərimiz",
     "send":"Göndər",
+    "sending":"Göndərilir",
     "name":"Adınız",
     "jobtitle":"Şirkət adı",
     "email":"E-mail",
     "phone":"Telefon",
-    "footer":"Bütün hüquqlar Impler MMC tərəfindən qorunur."
-   
+    "footer":"Bütün hüquqlar Impler MMC tərəfindən qorunur.",
+    "swal1":"Əla",
+    "swal2":"Mesajınız uğurla göndərildi.",
+    "input_name":"Adınız,soyadınız",
+    "input_job":"Şirkət adı",
+    "input_email":"Email",
+    "input_number":"Nömrəniz",
+    "input_message":"Mesajınız"
 }

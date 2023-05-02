@@ -73,14 +73,8 @@ const Header = () => {
 
   const MobileMenuHandler = () => {
     document.querySelector('.mobilemenu-popup').classList.toggle("show");
-    // document.querySelector('.btnOpen').classList.add("dBlockNone");
-    // document.querySelector('.btnClose').classList.add("dBlock");
   }
-  // const MobileMenuHandlerClose = () => {
-  //   document.querySelector('.mobilemenu-popup').classList.remove("show");
-  //   document.querySelector('.btnOpen').classList.remove("dBlockNone");
-  //   document.querySelector('.btnClose').classList.remove("dBlock");
-  // }
+
   return (
     <>
       <header id={classes} className={` absolute top-0 left-0 right-0 z-50 w-[100%] pt-4`}>
@@ -89,7 +83,7 @@ const Header = () => {
             <Nav className='items-center justify-between'>
               <div className="logo cursor-pointer">
                 <a href={`#home`}>
-                  <img src={implerLogo} alt="" className='w-[150px]' />
+                  <img src={implerLogo} alt="" className='w-[150px] sm:w-[100px]' />
                 </a>
               </div>
               <div className="nav-menu relative flex">

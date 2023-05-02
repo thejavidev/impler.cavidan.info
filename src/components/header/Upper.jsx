@@ -3,8 +3,12 @@ import React, { useEffect } from 'react';
 const Upper =({toggle, switchLang})=>{
 
     useEffect(()=>{
-        if(localStorage.getItem("i18nextLng") ==='tr-TR'){
+        if(localStorage.getItem("i18nextLng") ==='tr-TR'  ){
             localStorage.setItem('i18nextLng', 'azerbaycan');
+        }else if(localStorage.getItem("i18nextLng") ==='ru-RU'){
+            localStorage.setItem('i18nextLng', 'russian');
+        }else if(localStorage.getItem("i18nextLng") ==='en-GB'){
+            localStorage.setItem('i18nextLng', 'english');
         }
     })
 

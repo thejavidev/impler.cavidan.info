@@ -14,7 +14,7 @@ import "swiper/css/navigation";
 import LoaderWorks from '../loader/LoaderWorks';
 
 
-export default function SwiperCards({ img1, imgHvr, idP, clientNm, dataId, lngText, imgModal, titleProject, prd }) {
+export default function SwiperCards({ img1, imgHvr, idP, clientNm, imagesAll, lngText, titleProject, prd }) {
 
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
@@ -93,9 +93,17 @@ export default function SwiperCards({ img1, imgHvr, idP, clientNm, dataId, lngTe
                         </Col>
                         <Col lg='6' md='12' className='md:pt-6 pt-767 h-[100%]'>
                             <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
-                                <SwiperSlide>
-                                    <img src={img1} className='w-[100%] h-[400px] object-cover' alt="" />
-                                </SwiperSlide>
+                                {
+                                    imagesAll && imagesAll.map((item,index)=>(
+                                        <SwiperSlide key={index}>
+                                           {
+                                            loading ? <LoaderWorks /> :
+                                            <img src={item.src} className='w-[100%] h-[400px] object-cover' alt="" />
+                                           }
+                                        </SwiperSlide>
+                                    ))
+                                }
+                               
 
                             </Swiper>
 

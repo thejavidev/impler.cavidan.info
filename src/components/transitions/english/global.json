@@ -10,9 +10,17 @@
     "more":"more",
     "works":"Works",
     "send":"Send",
+    "sending":"Sending",
     "name":"Name",
     "jobtitle":"Company, job title",
     "email":"E-mail",
     "phone":"Phone",
-    "footer":"All rights reserved by Impler LLC."
+    "footer":"All rights reserved by Impler LLC.",
+    "swal1":"Great",
+    "swal2":"Your message has been sent successfully.",
+    "input_name":"Name,Surname",
+    "input_job":"Название компании",
+    "input_email":"Email",
+    "input_number":"Phone",
+    "input_message":"Message"
 }

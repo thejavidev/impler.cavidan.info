@@ -34,7 +34,7 @@ const Projects = () => {
     <>
 
 
-      <section className='bg-[#234656] pt-[150px] sm:pt-[50px] pb-[150px] sm:pb-[50px] pr-0 pl-0 relative w-[100%] h-[100%] md:pl-10 md:pr-10' id='projects'>
+      <div className='bg-[#234656] pt-[150px] sm:pt-[50px] pb-[150px] sm:pb-[50px] pr-0 pl-0 relative w-[100%] h-[100%] md:pl-10 md:pr-10' id='projects'>
         <Container>
           <Row>
 
@@ -48,7 +48,7 @@ const Projects = () => {
               loading ? <LoaderWorks /> :
                 <>
                   {items && items?.map((item, index) => (
-                    <SwiperCards img1={item.src} item={item.src} imgHvr={item.logo} imgModal={item.src} clientNm={item.client_name} dataId={item.id} idP={item.id} key={index} titleProject={ml(item.title_az, item.title_ru, item.title_en)} lngText={ml(item.text_az, item.text_ru, item.text_en)} prd={item.period} />
+                    <SwiperCards img1={item.src} imagesAll={item.images} item={item.src} imgHvr={item.logo} imgModal={item.src} clientNm={item.client_name} dataId={item.id} idP={item.id} key={index} titleProject={ml(item.title_az, item.title_ru, item.title_en)} lngText={ml(item.text_az, item.text_ru, item.text_en)} prd={item.period} />
                   ))}
                 </>
             }
@@ -60,7 +60,7 @@ const Projects = () => {
 
         </Container>
 
-      </section>
+      </div>
 
 
 
