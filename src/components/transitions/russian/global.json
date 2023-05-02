@@ -19,7 +19,8 @@
     "swal1":"Отлично",
     "swal2":"Ваше сообщение успешно отправлено.",
     "input_name":"Имя и Фамилия",
-    "input_job":"Company name",
+    "input_job":"Название компании",
+
     "input_email":"Э-почта",
     "input_number":"Номер",
     "input_message":"Сообщение"

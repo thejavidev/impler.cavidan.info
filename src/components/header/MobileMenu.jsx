@@ -42,12 +42,12 @@ const MobileMenu = ({MobileHandler}) => {
         },
     ]
     return (
-        <header className='bg-[#163959] w-[100%] h-auto text-[30px] mobilemenu-popup fixed top-24 pb-4  z-20'>
-            <ul className='flex items-start w-[100%] justify-start flex-col pl-20'>
+        <header className='bg-[#163959] w-[100%] h-auto text-[30px] mobilemenu-popup fixed top-[4.5rem] pb-[1.5rem] md:pb-0  z-20'>
+            <ul className='flex items-start w-[100%] justify-start flex-col pl-20 md:pl-5'>
                 {
                     navbarCards && navbarCards.map((item, index) => (
-                        <li key={index} onClick={MobileHandler}>
-                            <a href={`#${item.href}`} className='text-white pr-0 pl-0 font-bold pt-[15px] pb-[15px] text-[16px] uppercase relative transition-all colorHover'>
+                        <li key={index} onClick={MobileHandler} className='flex '>
+                            <a href={`#${item.href}`} className='text-white pr-0 pl-0 font-bold pt-[15px]  pb-[15px] xs:pb-[8px] xs:pt-[8px] text-[16px] md:text-[14px] uppercase relative transition-all colorHover'>
                                 {item.name}
                             </a>
                         </li>

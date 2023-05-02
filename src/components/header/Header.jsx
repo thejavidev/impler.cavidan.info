@@ -81,7 +81,7 @@ const Header = () => {
 
   return (
     <>
-      <header id={classes} className={` absolute top-0 left-0 right-0 z-50 w-[100%] pt-4`}>
+      <header id={classes} className={` absolute top-0 left-0 right-0 z-50 w-[100%] pt-[1.5rem] md:pt-1`}>
         <Container fluid='lg' className='lg:pl-10 lg:pr-10 md:pl-6 md:pr-4 xs:pl-6 xs:pr-2'>
           <Row>
             <Nav className='items-center justify-between p-0'>

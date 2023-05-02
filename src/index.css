@@ -233,6 +233,9 @@ input{
   .pt-767{
     padding-top: 20px;
   }
+  #is-sticky{
+    padding: 5px !important;
+  }
   #is-sticky .languages {
     padding-top: 7px;
   }

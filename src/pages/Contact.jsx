@@ -119,7 +119,7 @@ const Contact = () => {
                            value={form.job} required
                            onChange={handleChange}
                            autoComplete="off"
-                          type='text' placeholder={t("input_name")} name='job' id='job'
+                          type='text' placeholder={t("input_job")} name='job' id='job'
                           className='placeholder:text-white placeholder:capitalize placeholder:opacity-60
                                     shadow-none outline-none
                                     w-[100%] h-[55px] pt-0 pb-0 pl-[15px] pr-[15px] text-white borderInp bg-[#34a08d] text-[16px]'
