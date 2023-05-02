@@ -9,6 +9,8 @@ const Upper =({toggle, switchLang})=>{
             localStorage.setItem('i18nextLng', 'russian');
         }else if(localStorage.getItem("i18nextLng") ==='en-GB'){
             localStorage.setItem('i18nextLng', 'english');
+        }else if(localStorage.getItem("i18nextLng") ==='az-AZ'){
+            localStorage.setItem('i18nextLng', 'azerbaycan');
         }
     })
 
