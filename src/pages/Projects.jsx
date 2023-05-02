@@ -34,14 +34,14 @@ const Projects = () => {
     <>
 
 
-      <div className='bg-[#234656] pt-[150px] sm:pt-[50px] pb-[150px] sm:pb-[50px] pr-0 pl-0 relative w-[100%] h-[100%] md:pl-10 md:pr-10' id='projects'>
+      <div className='bg-[#234656] pt-[150px] sm:pt-[50px] pb-[150px] sm:pb-[50px] pr-0 pl-0 relative w-[100%] h-[100%] md:pl-6 md:pr-6' id='projects'>
         <Container>
           <Row>
 
             <Col lg='12' md='12' className='pb-[40px]'>
-              <h2 className='text-[#fff] uppercase text-[50px] sm:text-[35px] pt-0 pl-0 pr-0 pb-10 font-bold'>{t("works")}</h2>
-              <div className="w-[160px] mb-10">
-                <img src={implerLogo} alt="" className='max-w-[100%] h-auto' />
+              <h2 className='text-[#fff] uppercase text-[50px] sm:text-[25px] pt-0 pl-0 pr-0 pb-10 sm:pb-4 font-bold'>{t("works")}</h2>
+              <div className="mb-10 sm:mb-2">
+                <img src={implerLogo} alt="" className='max-w-[100%] h-auto w-[160px] sm:w-[100px]' />
               </div>
             </Col>
             {

@@ -8,6 +8,7 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
 
+
 const Partners = () => {
   const [t] = useTranslation("translation");
   const data = useSelector((state) => state.list);
@@ -19,23 +20,24 @@ const Partners = () => {
     setItems([...items, ...myapiData?.slice(items?.length, items?.length + STEP)]);
   }
 
+  
  
   return (
     <>
-      <div className='bg-[#EEC542] pt-[150px] sm:pt-[50px] pb-[150px] sm:pb-[50px] pr-0 pl-0 md:pl-10 md:pr-10' id='partners'>
+      <div className='bg-[#EEC542] pt-[150px] sm:pt-[50px] pb-[150px] sm:pb-[50px] pr-0 pl-0 md:pl-6 md:pr-6' id='partners'>
           <Container>
             <Col lg='12' md='12' className='pb-[40px]'>
-                <h2 className='text-[#fff] uppercase text-[50px] sm:text-[35px] pt-0 pl-0 pr-0 pb-10 font-bold '>{t("partners")}</h2>
-                <div className="w-[160px] mb-10">
-                    <img src={implerLogo} alt="" className='max-w-[100%] h-auto myfilter' />
+                <h2 className='text-[#fff] uppercase text-[50px] sm:text-[25px] pt-0 pl-0 pr-0 pb-10 sm:pb-4 font-bold '>{t("partners")}</h2>
+                <div className="mb-10 sm:mb-2">
+                    <img src={implerLogo} alt="" className='max-w-[100%] w-[160px]  sm:w-[100px] h-auto myfilter' />
                   </div>
               </Col>
             <Row className='justify-start xl:gap-[40px] md:gap-0 '>
                 {
                   items && items?.map((item,index)=>(
                     <Col lg='2' md='3'  sm='4' xs='4' key={index} >
-                      <div className="img">
-                        <img className='grayscale hover:grayscale-0 transition-all cursor-pointer' src={item.src} alt="" />
+                      <div className="img" >
+                        <img className='grayscale hover:grayscale-0 transition-all cursor-pointer' src={item.src} alt=""  />
                       </div>
                     </Col>
                   ))

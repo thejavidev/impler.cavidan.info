@@ -49,13 +49,13 @@ const Services = () => {
 
   return (
     <>
-     <div className='bg-[#B9553A] pt-[150px] sm:pt-[50px] pb-[150px] sm:pb-[50px] pl-0 pr-0 md:pl-10 md:pr-10' id='services'>
+     <div className='bg-[#B9553A] pt-[150px] sm:pt-[50px] pb-[150px] sm:pb-[50px] pl-0 pr-0 md:pl-10 md:pr-10 sm:pl-6 sm:pr-6' id='services'>
       <Container>
         <Row>
           <div className="service_text">
-            <h2 className='text-white leading-3 uppercase text-[50px] sm:text-[35px] pb-20 font-bold'>{t("servis")}</h2>
-            <div className="w-[160px] mb-10">
-                    <img src={implerLogo} alt="" className='max-w-[100%] h-auto' />
+            <h2 className='text-white leading-3 uppercase text-[50px] sm:text-[30px] pb-20 sm:pb-10 font-bold'>{t("servis")}</h2>
+            <div className=" mb-10 sm:mb-5">
+                    <img src={implerLogo} alt="" className='max-w-[100%] h-auto w-[160px] sm:w-[100px]' />
                 </div>
           </div>
           <div className="services-lists" >
@@ -79,7 +79,7 @@ const Services = () => {
                 ))
               }
               {isOpened  && (
-                  <div className='relative bg-[#AE4D36] border-none1 p-10' >
+                  <div className='relative bg-[#AE4D36] border-none1 p-10 sm:p-4' >
                       <div className="close absolute right-4 top-2 cursor-pointer ">
                         <AiFillCloseCircle onClick={toggle2} className='text-[#301710] text-[25px]' />
                       </div>
@@ -87,15 +87,15 @@ const Services = () => {
                       <Tab.Container id="left-tabs-example" defaultActiveKey="first" className=''> 
                           <Row>
                             <Col lg={12}>
-                              <Nav  className="flex bg-[#B9553A] w-[100%] pr-5 pl-5 justify-start">
+                              <Nav  className="flex bg-[#B9553A] w-[100%] pr-5 pl-5 justify-start sm:mt-6">
                                 
                                 {apidata  && apidata.map((item)=>(
                                   
                                   <Nav.Item key={item.id} className='list2'>
                                     <Nav.Link to={item.eventKey} eventKey={item.eventKey} className='flex items-center outline-none border-none1 border-radius-none image'>
                                         
-                                        <img src={item.src} className='first w-[70px]' alt="" />
-                                        <img className='second w-[70px] hidden' src={item.src_hover} alt={item.alt} />
+                                        <img src={item.src} className='first w-[70px] sm:w-[40px]' alt="" />
+                                        <img className='second w-[70px] sm:w-[40px] hidden' src={item.src_hover} alt={item.alt} />
                                     </Nav.Link>
                                   </Nav.Item>
                                 ))}
@@ -106,9 +106,9 @@ const Services = () => {
                                 {apidata && apidata.map((item)=>(
                                   <Tab.Pane eventKey={item.eventKey} key={item.id}>
                                       <Row>
-                                        <Col lg='8' className='text-white'>
-                                          <p className='text-white text-[24px] pt-[0px] pl-0 pr-0 pb-[10px] font-bold'> {ml(item.title_az,item.title_ru,item.title_en)}</p>
-                                            <div dangerouslySetInnerHTML={{ __html: ml(item.desc_left_az,item.desc_left_ru,item.desc_left_en)}}></div>
+                                        <Col lg='8' className='text-white sm:mb-6'>
+                                          <p className='text-white text-[24px] md:text-[18px] pt-[0px] pl-0 pr-0 pb-[10px] font-bold'> {ml(item.title_az,item.title_ru,item.title_en)}</p>
+                                            <div className='sm:text-start' dangerouslySetInnerHTML={{ __html: ml(item.desc_left_az,item.desc_left_ru,item.desc_left_en)}}></div>
                                         </Col>
                                         <Col lg='4' className='text-white'>
                                         <div dangerouslySetInnerHTML={{ __html: ml(item.desc_right_az,item.desc_right_ru,item.desc_right_en)}}></div>

@@ -23,7 +23,11 @@ const Header = () => {
     const stickyClass = scrollTop >= 250 ? "is-sticky" : "";
     setSticky(stickyClass);
   };
-  
+  let body =document.querySelector('body')
+  let burger=document.getElementsByClassName('.mobilemenu-popup')
+  window.addEventListener("scroll", function() {
+    document.querySelector('.mobilemenu-popup').classList.remove("show");
+  });
   const navbarCards =[
     {
       id:1,
@@ -78,15 +82,15 @@ const Header = () => {
   return (
     <>
       <header id={classes} className={` absolute top-0 left-0 right-0 z-50 w-[100%] pt-4`}>
-        <Container fluid='lg' className='lg:pl-10 lg:pr-10'>
+        <Container fluid='lg' className='lg:pl-10 lg:pr-10 md:pl-6 md:pr-4 xs:pl-2 xs:pr-2'>
           <Row>
-            <Nav className='items-center justify-between'>
+            <Nav className='items-center justify-between p-0'>
               <div className="logo cursor-pointer">
                 <a href={`#home`}>
-                  <img src={implerLogo} alt="" className='w-[150px] sm:w-[100px]' />
+                  <img src={implerLogo} alt="" className='w-[150px] sm:w-[100px] xs:w-[80px]' />
                 </a>
               </div>
-              <div className="nav-menu relative flex">
+              <div className="nav-menu relative flex navMenu">
                 <div className="menu-list">
                   <ul className='flex items-center w-[100%] justify-end lg:hidden'>
                     {
@@ -101,7 +105,6 @@ const Header = () => {
                   </ul>
                   <div className="btn hidden lg:block outline-none border-none shadow-none">
                       <button className='outline-none border-none shadow-none btnOpen' onClick={MobileMenuHandler}><AiOutlineMenu className='text-white text-[30px] outline-none border-none shadow-none' /></button>
-                      {/* <button className='outline-none border-none shadow-none hidden btnClose' onClick={MobileMenuHandlerClose}><AiOutlineClose className='text-white text-[30px] outline-none border-none shadow-none' /></button> */}
                   </div>
                 </div>
                 <div className="langs">

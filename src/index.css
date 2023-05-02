@@ -236,4 +236,7 @@ input{
   #is-sticky .languages {
     padding-top: 7px;
   }
+  #is-sticky .navMenu{
+    flex-direction: row-reverse;
+  }
 }

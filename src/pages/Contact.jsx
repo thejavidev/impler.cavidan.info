@@ -82,13 +82,13 @@ const Contact = () => {
 
   return (
     <>
-      <div  className='bg-[#34a08d] pt-[150px] sm:pt-[50px] pb-[150px] sm:pb-[50px] xs:pb-[30px] pl-0 pr-0 md:pl-10 md:pr-10' id='contact'>
+      <div  className='bg-[#34a08d] pt-[150px] sm:pt-[50px] pb-[150px] sm:pb-[50px] xs:pb-[30px] pl-0 pr-0 md:pl-6 md:pr-6' id='contact'>
         <Container>
           <Row>
             <div className='block'>
-              <h2 className='text-white uppercase text-[50px] sm:text-[35px] mb-4 font-bold'>{t("contact")}</h2>
-              <div className="w-[160px] mb-10">
-                <img src={implerLogo} alt="" className='max-w-[100%] h-auto' />
+              <h2 className='text-white uppercase text-[50px] sm:text-[25px] mb-4 font-bold'>{t("contact")}</h2>
+              <div className="mb-10 sm:mb-5">
+                <img src={implerLogo} alt="" className='max-w-[100%] h-auto w-[160px] sm:w-[100px]' />
               </div>
             </div>
             <Col lg='6' md='12'>
@@ -187,13 +187,13 @@ const Contact = () => {
                 </p>
                 <p className='flex items-center mb-2'>
                   {t('email')} :
-                  <a href={myapi?.email} className='pl-2'>
+                  <a href={`mailto:${myapi?.email}`} className='pl-2'>
                     {myapi?.email}
                   </a>
                 </p>
                 <p className='flex items-center'>
                   {t('phone')} :
-                  <a href={myapi?.phone} className='pl-2'>
+                  <a href={`tel:${myapi?.phone}`} className='pl-2'>
                    {myapi?.phone}
                   </a>
                 </p>

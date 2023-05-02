@@ -5,6 +5,9 @@ import { useTranslation } from 'react-i18next';
 
 const MobileMenu = ({MobileHandler}) => {
     const [t] = useTranslation("translation");
+
+   
+
     const navbarCards = [
         {
             id: 1,

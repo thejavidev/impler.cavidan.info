@@ -22,19 +22,19 @@ const Company = () => {
 
   return (
     <>
-      <div className='bg-[#cc67a0] pt-[150px] sm:pt-[50px] pb-[150px] sm:pb-[50px] pl-0 pr-0 md:pl-10 md:pr-10' id='company'>
+      <div className='bg-[#cc67a0] pt-[150px] sm:pt-[50px] pb-[150px] sm:pb-[50px] pl-0 pr-0 md:pl-6 md:pr-6' id='company'>
         <Container >
           <Row>
             <div className='block'>
-              <h2 className='text-white uppercase text-[50px] sm:text-[35px] mb-4 font-bold'>{t("company")}</h2>
-              <div className="w-[160px] mb-10">
-                <img src={implerLogo} alt="" className='max-w-[100%] h-auto' />
+              <h2 className='text-white uppercase text-[50px] sm:text-[25px] mb-4 font-bold'>{t("company")}</h2>
+              <div className="mb-10 sm:mb-2">
+                <img src={implerLogo} alt="" className='max-w-[100%] h-auto w-[160px] sm:w-[100px]' />
               </div>
             </div>
-            <div className="pt-[40px] flex justify-center flex-wrap">
+            <div className="pt-[40px] pl-0 pr-0 flex justify-center flex-wrap">
               {
                 apidata && apidata?.map((item, index) => (
-                  <Col lg='2' md='3' sm='4' className='flex justify-center' key={index}>
+                  <Col lg='2' md='3' sm='4' xs='6' className='flex justify-center' key={index}>
                     <div className="companyItem w-[170px] h-[170px] overflow-hidden block relative p-[10px] cursor-pointer">
                       <div className="overflow-hidden w-[100%] z-0 relative rounded-full">
                         <img className='max-w-[100%] overflow-hidden' src={item.source} alt={item.alt} />

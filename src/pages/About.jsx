@@ -28,35 +28,35 @@ const About = () => {
 
   return (
     <>
-      <div className='block bg-[#89a225] pt-[150px] sm:pt-[50px] pb-[150px] sm:pb-[50px] pl-0 pr-0 md:pl-10 md:pr-10' id='about'>
+      <div className='bg-[#89a225] pt-[150px] sm:pt-[50px] pb-[150px] sm:pb-[50px] pl-0 pr-0 md:pl-10 md:pr-10 sm:pl-6 sm:pr-6' id='about'>
         <Container>
           <Row>
-            <Col lg='12' md='12' className='mb-10 order-[-2]'>
-              <h2 className='text-white text-[50px] sm:text-[35px] font-bold uppercase pt-0 pl-0 pb-10 pr-0 '>
+            <Col lg='12' md='12' className='mb-10 order-[-2] p-0 sm:mb-0'>
+              <h2 className='text-white text-[50px] sm:text-[30px] font-bold uppercase pt-0 pl-0 pb-10 pr-0 '>
                 {t("about")}
               </h2>
-              <div className="w-[160px]">
+              <div className="w-[160px] sm:w-[100px]">
                 {
                   loading ? <LoaderContent />
                     :
-                    <img src={implerLogo} alt="" className='max-w-[100%] h-auto' />
+                    <img src={implerLogo} alt="" className='max-w-[100%] h-auto ' />
                 }
               </div>
             </Col>
-            <Col lg='8' md='12' sm='12' >
+            <Col lg='8' md='12' sm='12' className='p-0'>
               <div className="aboutText">
                 {
                   loading ? <LoaderContent />
                     :
-                    <div className='text-white text-[18px] pt-[30px] pb-[30px] pl-0 pr-0 columns-2 sm:columns-1'
+                    <div className='text-white text-[18px] sm:text-[15px] pt-[30px] pb-[30px] pl-0 pr-0 columns-2 sm:columns-1 sm:text-start'
                       dangerouslySetInnerHTML={{ __html: apidata && ml(apidata?.about_text_az, apidata?.about_text_ru, apidata?.about_text_en) }}></div>
                 }
               </div>
 
             </Col>
-            <Col lg='4' md='12' sm='12' className='orderBy'>
+            <Col lg='4' md='12' sm='12' className='orderBy p-0'>
               <div className="aboutImg justify-center flex">
-                <img src={apidata && apidata?.about_img_img_responsive} alt="" />
+                <img src={apidata && apidata?.about_img_img_responsive} className='sm:w-[250px]' alt="" />
               </div>
             </Col>
           </Row>
