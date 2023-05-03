@@ -13,27 +13,25 @@ import Col from 'react-bootstrap/Col';
 import { getMultiLang as ml } from '../MultiLang';
 import LoaderContent from '../loader/loaderContent';
 
-const ServiceModal3 = ({ idP, altText, srcPic, srcPicHover, titleAll, eventKey }) => {
+const ServiceModal = ({ idP, altText, srcPic, srcPicHover, titleAll, eventKey }) => {
     const [loading, setLoading] = useState(false)
     const [isOpened, setIsOpened] = useState(false);
     function toggle() {
         setIsOpened(wasOpened => !wasOpened);
-        var elms = document.querySelectorAll('.list');
+        let elms = document.querySelectorAll('.list');
         [].forEach.call(elms, function (el) {
             el.classList.add("closeDiv");
         });
-
     }
     function toggle2() {
         setIsOpened(wasOpened => !wasOpened);
-        var elms2 = document.querySelector('.close');
+        let elms2 = document.querySelector('.close');
         elms2.classList.add("closeDiv");
 
-        var elms = document.querySelectorAll('.list');
+        let elms = document.querySelectorAll('.list');
         [].forEach.call(elms, function (el) {
             el.classList.remove("closeDiv");
-        });
-
+        })
     }
     const [t] = useTranslation("translation");
     const dispatch = useDispatch();
@@ -68,7 +66,7 @@ const ServiceModal3 = ({ idP, altText, srcPic, srcPicHover, titleAll, eventKey }
                         <AiFillCloseCircle onClick={toggle2} className='text-[#301710] text-[25px]' />
                     </div>
                     <div className="nav-tabs border-none1">
-                        <Tab.Container id="left-tabs-example" defaultActiveKey={eventKey} className=''>
+                        <Tab.Container defaultActiveKey={eventKey} >
                             <Row>
                                 <Col lg={12}>
                                     <Nav className="flex bg-[#B9553A] w-[100%] pr-5 pl-5 justify-start sm:mt-6">
@@ -112,4 +110,4 @@ const ServiceModal3 = ({ idP, altText, srcPic, srcPicHover, titleAll, eventKey }
     )
 }
 
-export default ServiceModal3
+export default ServiceModal

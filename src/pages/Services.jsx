@@ -17,7 +17,7 @@ const Services = () => {
       dispatch(loadposts());
   }, [dispatch]);
 
-
+ 
   return (
     <>
      <div className='bg-[#B9553A] pt-[150px] sm:pt-[50px] pb-[150px] sm:pb-[50px] pl-0 pr-0 md:pl-10 md:pr-10 sm:pl-6 sm:pr-6' id='services'>

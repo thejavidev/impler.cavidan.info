@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { implerLogo } from '../assets';
 import { FiChevronDown } from 'react-icons/Fi';
-import SwiperCards from '../components/UI/SwiperCards';
+import ProjectCard from '../components/UI/ProjectCard';
 import { useTranslation } from 'react-i18next';
 import { getMultiLang as ml } from '../components/MultiLang';
 import { useSelector } from 'react-redux';
@@ -48,7 +48,7 @@ const Projects = () => {
               loading ? <LoaderWorks /> :
                 <>
                   {items && items?.map((item, index) => (
-                    <SwiperCards img1={item.src} imagesAll={item.images} item={item.src} imgHvr={item.logo} imgModal={item.src} clientNm={item.client_name} dataId={item.id} idP={item.id} key={index} titleProject={ml(item.title_az, item.title_ru, item.title_en)} lngText={ml(item.text_az, item.text_ru, item.text_en)} prd={item.period} />
+                    <ProjectCard img1={item.src} imagesAll={item.images} item={item.src} imgHvr={item.logo} imgModal={item.src} clientNm={item.client_name} dataId={item.id} idP={item.id} key={index} titleProject={ml(item.title_az, item.title_ru, item.title_en)} lngText={ml(item.text_az, item.text_ru, item.text_en)} prd={item.period} />
                   ))}
                 </>
             }

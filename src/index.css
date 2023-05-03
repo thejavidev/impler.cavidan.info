@@ -28,6 +28,9 @@ input{
 .closeDiv{
   display: none !important;
 }
+.closeDivPorject{
+  display: none !important;
+}
 .openDiv{
   display: block !important;
 }
@@ -121,7 +124,18 @@ input{
   z-index: 8;
   background: rgba(2, 54, 71, 0.8);
 }
+.swiper-button-next,.swiper-button-prev{
+  background: #2F5D73 !important;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 
+}
+.swiper-button-next:after, .swiper-button-prev:after{
+  font-size: 20px !important;
+  font-weight: bold;
+}
 .list:nth-child(2), .list:nth-child(4), .list:nth-child(5), .list:nth-child(7), .list:nth-child(10), .list:nth-child(12), .list:nth-child(13), .list:nth-child(15), .list:nth-child(18), .list:nth-child(20) {
   background: #AE4D36;
 }
