@@ -65,9 +65,10 @@ const Header = () => {
 	};
   const langs = ["azerbaycan", "russian", "english"];
   const myLang = langs.filter(langChecker);
-
+  const [click, setClick] = useState(false)
   const MobileMenuHandler = () => {
     document.querySelector('.mobilemenu-popup').classList.toggle("show");
+    setClick(!click)
   }
   useEffect(() => {
     window.addEventListener("scroll", isSticky);
@@ -75,6 +76,8 @@ const Header = () => {
       window.removeEventListener("scroll", isSticky);
     };
   }, []);
+
+
   return (
     <>
       <header id={classes} className={` absolute top-0 left-0 right-0 z-[50] w-[100%] pt-[1.5rem] md:pt-1`}>
@@ -100,7 +103,13 @@ const Header = () => {
                     }
                   </ul>
                   <div className="btn hidden lg:block outline-none border-none shadow-none">
-                      <button className='outline-none border-none shadow-none btnOpen' onClick={MobileMenuHandler}><AiOutlineMenu className='text-white text-[30px] outline-none border-none shadow-none' /></button>
+                      <button className='outline-none border-none shadow-none btnOpen transition-all' onClick={MobileMenuHandler}>
+                      {
+                        click ?  
+                        <AiOutlineClose className='text-white text-[30px] outline-none border-none shadow-none ' /> :
+                        <AiOutlineMenu className='text-white text-[30px] outline-none border-none shadow-none' />
+                      }
+                      </button>
                   </div>
                 </div>
                 <div className="langs">
