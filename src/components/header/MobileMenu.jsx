@@ -1,12 +1,19 @@
 import React from 'react';
+import { useState } from 'react';
+import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
 
 
-const MobileMenu = ({MobileHandler}) => {
+const MobileMenu = ({ MobileHandler }) => {
     const [t] = useTranslation("translation");
+    const [scroll, setScroll] = useState(false)
+    useEffect(() => {
+        window.addEventListener("scroll", () => {
+            setScroll(window.scrollY > 10)
+        })
+    }, [])
 
-   
 
     const navbarCards = [
         {
@@ -42,7 +49,7 @@ const MobileMenu = ({MobileHandler}) => {
         },
     ]
     return (
-        <header className='bg-[#163959] w-[100%] h-auto text-[30px] mobilemenu-popup fixed top-[4.5rem] pb-[1.5rem] md:pb-0  z-20'>
+        <header className={`bg-[#163959] w-[100%] h-auto text-[30px] mobilemenu-popup fixed top-[5.5rem] pb-[1.5rem] md:pb-0 mobileHeader z-40 ${scroll ? "Noshow" : ""} `}>
             <ul className='flex items-start w-[100%] justify-start flex-col pl-20 md:pl-5'>
                 {
                     navbarCards && navbarCards.map((item, index) => (
@@ -54,7 +61,7 @@ const MobileMenu = ({MobileHandler}) => {
                     ))
                 }
             </ul>
-            
+
         </header>
     )
 }

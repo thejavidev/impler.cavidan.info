@@ -12,21 +12,13 @@ import { AiOutlineMenu ,AiOutlineClose} from 'react-icons/Ai';
 const Header = () => {
   const [sticky, setSticky] = useState("");
   const [t,i18n] =useTranslation("translation");
-  useEffect(() => {
-    window.addEventListener("scroll", isSticky);
-    return () => {
-      window.removeEventListener("scroll", isSticky);
-    };
-  }, []);
+ 
   const isSticky = () => {
     const scrollTop = window.scrollY;
     const stickyClass = scrollTop >= 250 ? "is-sticky" : "";
     setSticky(stickyClass);
   };
-  var burger=document.getElementsByClassName('.mobilemenu-popup')
-  window.addEventListener("scroll", function() {
-    burger.classList.remove("show");
-  });
+  
   const navbarCards =[
     {
       id:1,
@@ -77,10 +69,15 @@ const Header = () => {
   const MobileMenuHandler = () => {
     document.querySelector('.mobilemenu-popup').classList.toggle("show");
   }
-
+  useEffect(() => {
+    window.addEventListener("scroll", isSticky);
+    return () => {
+      window.removeEventListener("scroll", isSticky);
+    };
+  }, []);
   return (
     <>
-      <header id={classes} className={` absolute top-0 left-0 right-0 z-50 w-[100%] pt-[1.5rem] md:pt-1`}>
+      <header id={classes} className={` absolute top-0 left-0 right-0 z-[50] w-[100%] pt-[1.5rem] md:pt-1`}>
         <Container fluid='lg' className='lg:pl-10 lg:pr-10 md:pl-6 md:pr-4 xs:pl-6 xs:pr-2'>
           <Row>
             <Nav className='items-center justify-between p-0'>
@@ -128,7 +125,7 @@ const Header = () => {
           </Row>
         </Container>
       </header>
-      <MobileMenu MobileHandler={MobileMenuHandler} />
+      <MobileMenu MobileHandler={MobileMenuHandler}  />
     </>
   )
 }
