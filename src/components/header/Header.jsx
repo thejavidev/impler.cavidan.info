@@ -23,10 +23,9 @@ const Header = () => {
     const stickyClass = scrollTop >= 250 ? "is-sticky" : "";
     setSticky(stickyClass);
   };
-  let body =document.querySelector('body')
-  let burger=document.getElementsByClassName('.mobilemenu-popup')
+  var burger=document.getElementsByClassName('.mobilemenu-popup')
   window.addEventListener("scroll", function() {
-    document.querySelector('.mobilemenu-popup').classList.remove("show");
+    burger.classList.remove("show");
   });
   const navbarCards =[
     {

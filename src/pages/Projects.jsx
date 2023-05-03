@@ -52,7 +52,7 @@ const Projects = () => {
                   ))}
                 </>
             }
-
+            
             {(items?.length < myapiData?.length) && <button onClick={() => loadMore()} className='flex mt-5 items-center text-white uppercase font-bold text-[20px]'>
               <FiChevronDown className='mr-2 font-bold text-[30px] text-[#F6C300]' /> {t("more")}
             </button>}

@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { AiOutlineClose } from 'react-icons/Ai';
 import { Swiper, SwiperSlide } from "swiper/react";
-
 import { Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
