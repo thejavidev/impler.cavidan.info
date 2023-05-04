@@ -10,17 +10,55 @@ import Slider from "./pages/Slider";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect } from "react"
 import Loader from "./components/loader/Loader"
+import { useDispatch, useSelector } from "react-redux"
+import { loadposts } from "./components/store/posts"
 
 
 function App() {
   const [loading, setLoading] = useState(false)
+  const dispatch = useDispatch();
+  const data = useSelector((state) => state.list);
+  const myAPIData =[
+    {
+      id:1,
+      data:data.data?.about_section
+    },
+    {
+      id:2,
+      data:data.data?.home_section
+    },
+    {
+      id:3,
+      data:data.data?.teams
+    },
+    {
+      id:4,
+      data:data.data?.services_section.serviceslists
+    },
+    {
+      id:5,
+      data:data.data?.works
+    },
+    {
+      id:6,
+      data:data.data?.partners
+    },
+    {
+      id:7,
+      data:data.data?.socials
+    },
+    {
+      id:8,
+      data:data.data?.home_section.seodata
+    },
+  ]
   useEffect(() => {
+    dispatch(loadposts());
     setLoading(true)
     setTimeout(() => {
       setLoading(false)
     }, 1500);
-
-  }, [])
+  }, [dispatch])
   return (
     <>
     {
@@ -28,14 +66,14 @@ function App() {
       <Loader />
       :
       < >
-         <Layout >
-          <Slider />
-          <About />
-          <Services />
-          <Projects />
-          <Company />
-          <Partners />
-          <Contact />
+         <Layout helmetData={myAPIData[7].data} >
+            <Slider sliderData={myAPIData[1].data} />
+            <About aboutData={myAPIData[0].data} />
+            <Services servicesData={myAPIData[3].data}  />
+            <Projects projectData={myAPIData[4].data} />
+            <Company companyData={myAPIData[2].data} />
+            <Partners partnersData={myAPIData[5].data} />
+            <Contact contactData={myAPIData[6].data} />
         </Layout>
       </>
     }

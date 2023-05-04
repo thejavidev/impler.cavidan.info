@@ -3,23 +3,11 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { implerLogo } from '../assets';
 import { useTranslation } from 'react-i18next';
-import { useEffect } from 'react';
 import { getMultiLang as ml } from '../components/MultiLang';
-import { useDispatch, useSelector } from 'react-redux';
-import { loadposts } from "../components/store/posts";
 
-const Company = () => {
+const Company = ({companyData}) => {
   const [t] = useTranslation("translation");
-  const dispatch = useDispatch();
-  const data = useSelector((state) => state.list);
-  const apidata = data.data?.teams;
-
-  useEffect(() => {
-    dispatch(loadposts());
-  }, [dispatch]);
-
- 
-
+  const apidata = companyData;
   return (
     <>
       <div className='bg-[#cc67a0] pt-[150px] sm:pt-[50px] pb-[150px] sm:pb-[50px] pl-0 pr-0 md:pl-6 md:pr-6' id='company'>

@@ -5,25 +5,18 @@ import Container from 'react-bootstrap/Container';
 import { useTranslation } from 'react-i18next';
 import React, { useEffect } from "react";
 import { getMultiLang as ml } from '../components/MultiLang';
-import { useDispatch, useSelector } from 'react-redux';
-import { loadposts } from "../components/store/posts";
 import { useState } from 'react';
 import LoaderContent from '../components/loader/loaderContent';
-const About = () => {
-
+const About = ({aboutData}) => {
+  const apidata =aboutData;
   const [t] = useTranslation("translation");
   const [loading, setLoading] = useState(false)
-  const dispatch = useDispatch();
-  const data = useSelector((state) => state.list);
-  const apidata = data.data?.about_section;
-
   useEffect(() => {
-    dispatch(loadposts());
     setLoading(true)
     setTimeout(() => {
       setLoading(false)
     }, 400);
-  }, [dispatch]);
+  }, []);
 
 
   return (

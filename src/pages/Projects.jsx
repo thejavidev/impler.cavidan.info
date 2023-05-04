@@ -7,17 +7,12 @@ import { FiChevronDown } from 'react-icons/Fi';
 import ProjectCard from '../components/UI/ProjectCard';
 import { useTranslation } from 'react-i18next';
 import { getMultiLang as ml } from '../components/MultiLang';
-import { useSelector } from 'react-redux';
 import LoaderWorks from '../components/loader/LoaderWorks';
 
-
-
-
-const Projects = () => {
+const Projects = ({projectData}) => {
   const [t] = useTranslation("translation");
   const [loading, setLoading] = useState(false)
-  const data = useSelector((state) => state.list);
-  const apidata = data.data?.works;
+  const apidata = projectData;
   const STEP = 9;
   const myapiData = apidata;
   const [items, setItems] = useState(myapiData?.slice(0, STEP));

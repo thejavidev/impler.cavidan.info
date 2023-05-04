@@ -5,14 +5,11 @@ import { useState } from 'react';
 import { FiChevronDown } from 'react-icons/Fi';
 import { implerLogo } from '../assets';
 import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
 
 
-
-const Partners = () => {
+const Partners = ({partnersData}) => {
   const [t] = useTranslation("translation");
-  const data = useSelector((state) => state.list);
-  const apidata = data.data?.partners;
+  const apidata = partnersData;
   const STEP = 18;
   const myapiData =apidata;
   const [items, setItems] = useState(myapiData?.slice(0, STEP));

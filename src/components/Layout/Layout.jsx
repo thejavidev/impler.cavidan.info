@@ -3,23 +3,17 @@ import Header from '../header/Header'
 import Footer from '../footer/Footer';
 import { Helmet,HelmetProvider  } from 'react-helmet-async';;
 import { useTranslation } from 'react-i18next';
-import { useEffect } from "react";
 import { getMultiLang as ml } from '../MultiLang';
-import { useDispatch, useSelector } from 'react-redux';
-import { loadposts } from "../store/posts";
-const Layout = ({children}) => {
+const Layout = ({children,helmetData}) => {
 
   const [t] = useTranslation("translation");
-  const dispatch = useDispatch();
-  const data = useSelector((state) => state.list);
-  const apidata =data.data?.home_section.seodata;
-  useEffect(() => {
-      dispatch(loadposts());
-  }, [dispatch]);
+  const apidata =helmetData;
+  const sitelang =localStorage.getItem("i18nextLng").slice(0,2);
   return (
     <>
     <HelmetProvider >
       <Helmet >
+        <html lang={sitelang} />
         <title>{ml(apidata && apidata?.seo_title_az,apidata?.seo_title_ru,apidata?.seo_title_en)}</title>
         <meta property="og:locale" content={apidata?.seo_locale} />
         <meta property="og:type" content={apidata?.seo_type} />

@@ -5,25 +5,15 @@ import { getMultiLang as ml } from '../components/MultiLang';
 import { implerLogo } from '../assets';
 import { useTranslation } from 'react-i18next';
 import { useState, useRef } from "react";
-import Swal from 'sweetalert2'
-import { useDispatch, useSelector } from 'react-redux';
-import { loadposts } from "../components/store/posts";
+import Swal from 'sweetalert2';
 import emailjs from '@emailjs/browser';
 import ReCAPTCHA from "react-google-recaptcha";
-import { useEffect } from 'react';
 
-const Contact = () => {
+const Contact = ({contactData}) => {
   const [t] = useTranslation("translation");
   const key ='6LeszNQlAAAAAPjJO_JnfezVolnEkbliz8jk_FMm';
-  const dispatch = useDispatch();
-  const data = useSelector((state) => state.list);
-  const apidata = data.data?.socials;
+  const apidata = contactData;
   const myapi =apidata;
-  
-
-  useEffect(() => {
-    dispatch(loadposts());
-  }, [dispatch]);
   const [chapchaisDone,setChapcaIsDone]=useState(false)
   const formRef = useRef();
   const [form, setForm] = useState({

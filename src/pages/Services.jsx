@@ -2,22 +2,12 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import { implerLogo } from '../assets';
 import { useTranslation } from 'react-i18next';
-import { useEffect } from 'react';
 import { getMultiLang as ml } from '../components/MultiLang';
-import { useDispatch, useSelector } from 'react-redux';
-import { loadposts } from "../components/store/posts";
 import ServiceModal from '../components/UI/ServiceModal';
 
-const Services = () => {
+const Services = ({servicesData}) => {
   const [t] = useTranslation("translation");
-  const dispatch = useDispatch();
-  const data = useSelector((state) => state.list);
-  const apidata =data.data?.services_section.serviceslists;
-  useEffect(() => {
-      dispatch(loadposts());
-  }, [dispatch]);
-
- 
+  const apidata =servicesData;
   return (
     <>
      <div className='bg-[#B9553A] pt-[150px] sm:pt-[50px] pb-[150px] sm:pb-[50px] pl-0 pr-0 md:pl-10 md:pr-10 sm:pl-6 sm:pr-6' id='services'>
