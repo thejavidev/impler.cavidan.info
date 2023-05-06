@@ -14,7 +14,7 @@ import { useCallback } from 'react';
 const Header = () => {
   const [sticky, setSticky] = useState("");
   const [t,i18n] =useTranslation("translation");
-  console.log('header render oldu')
+
  
   const isSticky = useCallback(() => {
     const scrollTop = window.scrollY;

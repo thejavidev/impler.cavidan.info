@@ -8,6 +8,9 @@ import { getMultiLang as ml } from '../components/MultiLang';
 import { useState } from 'react';
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import LoaderContent from '../components/loader/loaderContent';
+
+
+
 const About = ({aboutData}) => {
   const apidata =aboutData;
   const [t] = useTranslation("translation");

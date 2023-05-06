@@ -16,7 +16,6 @@ import { memo } from 'react';
 
  function ProjectCard({ img1, imgHvr, idP, clientNm, imagesAll, lngText, titleProject, prd }) {
 
-    console.log('project render oldu')
     const [isOpened, setIsOpened] = useState(false);
     const [loading, setLoading] = useState(false)
     const [t] = useTranslation("translation");

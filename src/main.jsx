@@ -10,14 +10,12 @@ import { I18nextProvider, initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import configureStore from "./components/store/configureStore";
 
-
 const store = configureStore();
-const defaultLanguage =["azerbaycan"]
-
-i18next.use(LanguageDetector,initReactI18next,).init({
+const defaultLanguage = ["azerbaycan"]
+i18next.use(LanguageDetector, initReactI18next,).init({
   resources,
   fallbackLng: defaultLanguage,
-  interpolation:{escapeValue:true},
+  interpolation: { escapeValue: true },
   lng: window.localStorage.getItem('i18nextLng'),
   debug: false,
 })

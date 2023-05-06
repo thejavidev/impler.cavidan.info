@@ -18,8 +18,6 @@ const Partners = ({partnersData}) => {
   const loadMore = useCallback(() => {
     setItems([...items, ...apidata?.slice(items?.length, items?.length + STEP)]);
   },[])
-  console.log('partners render oldu')
-  
  
   return (
     <>

@@ -9,8 +9,9 @@ import { useTranslation } from 'react-i18next';
 import { getMultiLang as ml } from '../components/MultiLang';
 import LoaderWorks from '../components/loader/LoaderWorks';
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { memo ,useMemo} from 'react';
+import { memo } from 'react';
 import { useCallback } from 'react';
+
 
 const Projects = ({projectData}) => {
   const [t] = useTranslation("translation");
@@ -28,6 +29,7 @@ const Projects = ({projectData}) => {
       setLoading(false)
     }, 1500);
   }, []);
+
   return (
     <>
 
@@ -39,6 +41,7 @@ const Projects = ({projectData}) => {
             <Col lg='12' md='12' className='pb-[40px]'>
               <h2 className='text-[#fff] uppercase text-[50px] sm:text-[25px] pt-0 pl-0 pr-0 pb-10 sm:pb-4 font-bold'>{t("works")}</h2>
               <div className="mb-10 sm:mb-2">
+                
                 <LazyLoadImage src={implerLogo} alt="" className='max-w-[100%] h-auto w-[160px] sm:w-[100px]' />
               </div>
             </Col>

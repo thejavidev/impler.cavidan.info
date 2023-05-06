@@ -6,14 +6,12 @@ import { AiOutlineInstagram,AiFillLinkedin } from 'react-icons/Ai';
 import { BsFacebook } from 'react-icons/Bs';
 import { FaTiktok } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
 
 
 const Footer = ({footerData}) => {
   const year = new Date().getFullYear();
   const [t] = useTranslation("translation");
   const apidata = footerData;
-  console.log('footer render oldu')
   return (
     <>
       <footer className='bg-[#34a08d] pt-[20px] pb-[20px] pl-0 pr-0'>
