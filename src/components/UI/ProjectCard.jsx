@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -7,51 +6,66 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { AiOutlineClose } from 'react-icons/Ai';
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Img } from 'react-image'
 import { Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import LoaderWorks from '../loader/LoaderWorks';
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import { memo } from 'react';
 
+ function ProjectCard({ img1, imgHvr, idP, clientNm, imagesAll, lngText, titleProject, prd }) {
 
-export default function ProjectCard({ img1, imgHvr, idP, clientNm, imagesAll, lngText, titleProject, prd }) {
+    console.log('project render oldu')
     const [isOpened, setIsOpened] = useState(false);
     const [loading, setLoading] = useState(false)
     const [t] = useTranslation("translation");
+   
+    const url = 'https://api.im.co.az/public/files/work/nophoto.png';
+
+
+    function toggle() {
+        let access = document.getElementById('projects');
+        access.scrollIntoView({behavior: 'smooth'}, true);
+        setIsOpened(wasOpened => !wasOpened);
+        let openProjects = document.querySelectorAll('.allProjects');
+        [].forEach.call(openProjects, function (el) {
+            el.classList.add("hidden");
+        });
+    }
+    function toggle2() {
+        setIsOpened(wasOpened => !wasOpened);
+        let elms2 = document.querySelector('.closeProject');
+        elms2.classList.add("hidden");
+
+        let elms = document.querySelectorAll('.allProjects');
+        [].forEach.call(elms, function (el) {
+            el.classList.remove("hidden");
+        })
+    }
+
+
     useEffect(() => {
+
         setLoading(true)
         setTimeout(() => {
             setLoading(false)
         }, 1500);
     }, []);
-    function toggle() {
-        setIsOpened(wasOpened => !wasOpened);
-        let elms = document.querySelectorAll('.projectList');
-        [].forEach.call(elms, function (el) {
-            el.classList.add("closeDivPorject");
-        });
-
-    }
-    function toggle2() {
-        setIsOpened(wasOpened => !wasOpened);
-        let elms2 = document.querySelector('.closeProject');
-        elms2.classList.add("closeDivPorject");
-
-        let elms = document.querySelectorAll('.projectList');
-        [].forEach.call(elms, function (el) {
-            el.classList.remove("closeDivPorject");
-        })
-    }
     return (
         <>
-            <Col lg='4' className="flex flex-col gap-20 mb-10 ">
+            <Col lg='4' md={6} xs={12} className="flex flex-col gap-20 mb-10 allProjects"  id={idP}>
                 {
                     loading ? <LoaderWorks /> :
-                        <div className="hoverWorks projectList" onClick={toggle} id={idP}>
+                        <div className="hoverWorks bg-rgba "  onClick={toggle}>
                             <Link className='w-[100%] cursor-pointer' to='/'  >
                                 <div className="image imageWorks relative overflow-hidden">
-                                    <img className='w-[100%] h-[200px] object-cover' src={img1} alt="" />
+                                    <LazyLoadImage className='w-[100%] h-[200px] object-contain' src={img1} alt="" />
                                     <div className="hover-img w-[100%] absolute  transformWorks " >
-                                        <img src={imgHvr} alt="" />
+                                        <Img
+                                            src={[imgHvr, url]}
+                                        />
+
                                     </div>
                                 </div>
                                 <div className="flex items-center pt-[15px] ">
@@ -67,8 +81,8 @@ export default function ProjectCard({ img1, imgHvr, idP, clientNm, imagesAll, ln
             </Col>
             {
                 isOpened && (
-                    <div className='relative bg-[#234656] p-[40px] md:p-[15px]' id={idP}>
-                        <Button onClick={toggle2} className='absolute closeProject right-[-20px] top-[-20px] border-none1 text-[25px] btn'>
+                    <div className='relative bg-[#2F5D73] p-[40px] md:p-[15px] rounded-md' id={idP}  >
+                        <Button onClick={toggle2} className='absolute closeProject right-[2px] top-[5px] border-none1 text-[25px] btn '>
                             <AiOutlineClose />
                         </Button>
                         <Row>
@@ -91,8 +105,7 @@ export default function ProjectCard({ img1, imgHvr, idP, clientNm, imagesAll, ln
                                     </div>
 
                                 </div>
-                                <div className="text-white pt-3 md:text-[14px] ">
-                                    {lngText}
+                                <div className="text-white pt-3 md:text-[14px] " dangerouslySetInnerHTML={{ __html: lngText }}>
                                 </div>
                             </Col>
                             <Col lg='6' md='12' className='md:pt-6 pt-767 h-[100%]'>
@@ -102,7 +115,7 @@ export default function ProjectCard({ img1, imgHvr, idP, clientNm, imagesAll, ln
                                             <SwiperSlide key={index}>
                                                 {
                                                     loading ? <LoaderWorks /> :
-                                                        <img src={item.src} className='w-[100%] h-[400px] md:h-[200px] object-cover' alt="" />
+                                                        <LazyLoadImage src={item.src} className='w-[100%] h-[400px] md:h-[200px] object-contain' alt="" />
                                                 }
                                             </SwiperSlide>
                                         ))
@@ -119,5 +132,6 @@ export default function ProjectCard({ img1, imgHvr, idP, clientNm, imagesAll, ln
         </>
     )
 }
+export default memo(ProjectCard)
 
 

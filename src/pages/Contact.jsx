@@ -8,6 +8,8 @@ import { useState, useRef } from "react";
 import Swal from 'sweetalert2';
 import emailjs from '@emailjs/browser';
 import ReCAPTCHA from "react-google-recaptcha";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
 
 const Contact = ({contactData}) => {
   const [t] = useTranslation("translation");
@@ -69,7 +71,7 @@ const Contact = ({contactData}) => {
         })
       })
   }
-
+  
   return (
     <>
       <div  className='bg-[#34a08d] pt-[150px] sm:pt-[50px] pb-[150px] sm:pb-[50px] xs:pb-[30px] pl-0 pr-0 md:pl-6 md:pr-6' id='contact'>
@@ -78,7 +80,7 @@ const Contact = ({contactData}) => {
             <div className='block'>
               <h2 className='text-white uppercase text-[50px] sm:text-[25px] mb-4 font-bold'>{t("contact")}</h2>
               <div className="mb-10 sm:mb-5">
-                <img src={implerLogo} alt="" className='max-w-[100%] h-auto w-[160px] sm:w-[100px]' />
+                <LazyLoadImage src={implerLogo} alt="" className='max-w-[100%] h-auto w-[160px] sm:w-[100px]' />
               </div>
             </div>
             <Col lg='6' md='12'>

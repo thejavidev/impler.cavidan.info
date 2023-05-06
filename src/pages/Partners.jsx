@@ -5,18 +5,20 @@ import { useState } from 'react';
 import { FiChevronDown } from 'react-icons/Fi';
 import { implerLogo } from '../assets';
 import { useTranslation } from 'react-i18next';
-
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import { memo } from 'react';
+import PartnersItem from '../components/UI/PartnersItem';
+import { useCallback } from 'react';
 
 const Partners = ({partnersData}) => {
   const [t] = useTranslation("translation");
   const apidata = partnersData;
   const STEP = 18;
-  const myapiData =apidata;
-  const [items, setItems] = useState(myapiData?.slice(0, STEP));
-  const loadMore = () => {
-    setItems([...items, ...myapiData?.slice(items?.length, items?.length + STEP)]);
-  }
-
+  const [items, setItems] = useState(apidata?.slice(0, STEP));
+  const loadMore = useCallback(() => {
+    setItems([...items, ...apidata?.slice(items?.length, items?.length + STEP)]);
+  },[])
+  console.log('partners render oldu')
   
  
   return (
@@ -26,21 +28,17 @@ const Partners = ({partnersData}) => {
             <Col lg='12' md='12' className='pb-[40px]'>
                 <h2 className='text-[#fff] uppercase text-[50px] sm:text-[25px] pt-0 pl-0 pr-0 pb-10 sm:pb-4 font-bold '>{t("partners")}</h2>
                 <div className="mb-10 sm:mb-2">
-                    <img src={implerLogo} alt="" className='max-w-[100%] w-[160px]  sm:w-[100px] h-auto myfilter' />
+                    <LazyLoadImage src={implerLogo} alt="" className='max-w-[100%] w-[160px]  sm:w-[100px] h-auto myfilter' />
                   </div>
               </Col>
-            <Row className='justify-start xl:gap-[40px] md:gap-0 '>
+            <Row className=' gap-[40px] md:gap-0'>
                 {
                   items && items?.map((item,index)=>(
-                    <Col lg='2' md='3'  sm='4' xs='4' key={index} >
-                      <div className="img" >
-                        <img className='grayscale hover:grayscale-0 transition-all cursor-pointer' src={item.src} alt=""  />
-                      </div>
-                    </Col>
+                    <PartnersItem key={index} partnerSrc={item.src} />
                   ))
                 }
             </Row>
-            {(items?.length < myapiData?.length) &&  <button onClick={()=>loadMore()} className='flex mt-5 items-center text-white uppercase font-bold text-[20px]'>
+            {(items?.length < apidata?.length) &&  <button onClick={()=>loadMore()} className='flex mt-5 items-center text-white uppercase font-bold text-[20px]'>
                <FiChevronDown className='mr-2 font-bold text-[30px] text-[#0a0a0a]' /> {t("more")}
             </button>  }
            
@@ -50,4 +48,4 @@ const Partners = ({partnersData}) => {
   )
 }
 
-export default Partners
+export default memo(Partners)

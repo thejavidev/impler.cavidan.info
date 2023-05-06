@@ -12,6 +12,7 @@ import { useEffect } from "react"
 import Loader from "./components/loader/Loader"
 import { useDispatch, useSelector } from "react-redux"
 import { loadposts } from "./components/store/posts"
+import { useCallback } from "react"
 
 
 function App() {
@@ -51,22 +52,25 @@ function App() {
       id:8,
       data:data.data?.home_section.seodata
     },
+    {
+      id:9,
+      data:data.data?.socials
+    },
   ]
-  useEffect(() => {
+  useEffect(useCallback(() => {
     dispatch(loadposts());
     setLoading(true)
     setTimeout(() => {
       setLoading(false)
     }, 1500);
-  }, [dispatch])
+  }, [dispatch]),[])
   return (
     <>
     {
       loading ? 
-      <Loader />
-      :
-      < >
-         <Layout helmetData={myAPIData[7].data} >
+      <Loader /> :
+      <>
+         <Layout helmetData={myAPIData[7].data} footerData={myAPIData[[9].data]} >
             <Slider sliderData={myAPIData[1].data} />
             <About aboutData={myAPIData[0].data} />
             <Services servicesData={myAPIData[3].data}  />
@@ -77,7 +81,6 @@ function App() {
         </Layout>
       </>
     }
-        
     </>
   )
 }

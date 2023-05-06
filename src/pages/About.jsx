@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 import React, { useEffect } from "react";
 import { getMultiLang as ml } from '../components/MultiLang';
 import { useState } from 'react';
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import LoaderContent from '../components/loader/loaderContent';
 const About = ({aboutData}) => {
   const apidata =aboutData;
@@ -32,7 +33,7 @@ const About = ({aboutData}) => {
                 {
                   loading ? <LoaderContent />
                     :
-                    <img src={implerLogo} alt="" className='max-w-[100%] h-auto ' />
+                    <LazyLoadImage src={implerLogo} alt="" className='max-w-[100%] h-auto ' />
                 }
               </div>
             </Col>
@@ -49,7 +50,7 @@ const About = ({aboutData}) => {
             </Col>
             <Col lg='4' md='12' sm='12' className='orderBy p-0'>
               <div className="aboutImg justify-center flex">
-                <img src={apidata && apidata?.about_img_img_responsive} className='sm:w-[250px]' alt="" />
+                <LazyLoadImage src={apidata && apidata?.about_img_img_responsive} className='sm:w-[250px]' alt="" />
               </div>
             </Col>
           </Row>

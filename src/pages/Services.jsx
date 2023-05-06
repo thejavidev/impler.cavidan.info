@@ -4,24 +4,25 @@ import { implerLogo } from '../assets';
 import { useTranslation } from 'react-i18next';
 import { getMultiLang as ml } from '../components/MultiLang';
 import ServiceModal from '../components/UI/ServiceModal';
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
-const Services = ({servicesData}) => {
+
+const Services = ({ servicesData }) => {
   const [t] = useTranslation("translation");
-  const apidata =servicesData;
+  const apidata = servicesData;
   return (
     <>
-     <div className='bg-[#B9553A] pt-[150px] sm:pt-[50px] pb-[150px] sm:pb-[50px] pl-0 pr-0 md:pl-10 md:pr-10 sm:pl-6 sm:pr-6' id='services'>
-      <Container>
-        <Row>
-          <div className="service_text">
-            <h2 className='text-white leading-3 uppercase text-[50px] sm:text-[30px] pb-20 sm:pb-10 font-bold'>{t("servis")}</h2>
-            <div className=" mb-10 sm:mb-5">
-                    <img src={implerLogo} alt="" className='max-w-[100%] h-auto w-[160px] sm:w-[100px]' />
-                </div>
-          </div>
-          <div className="services-lists" >
-            <Row >
-            <Row >
+      <div className='bg-[#B9553A] pt-[150px] sm:pt-[50px] pb-[150px] sm:pb-[50px] pl-0 pr-0 md:pl-10 md:pr-10 sm:pl-6 sm:pr-6' id='services'>
+        <Container>
+          <Row>
+            <div className="service_text">
+              <h2 className='text-white leading-3 uppercase text-[50px] sm:text-[30px] pb-20 sm:pb-10 font-bold'>{t("servis")}</h2>
+              <div className=" mb-10 sm:mb-5">
+                <LazyLoadImage src={implerLogo} alt="" className='max-w-[100%] h-auto w-[160px] sm:w-[100px]' />
+              </div>
+            </div>
+            <div className="services-lists" >
+              <Row >
                 {
                   apidata && apidata.map((item, index) => (
                     <ServiceModal
@@ -36,12 +37,10 @@ const Services = ({servicesData}) => {
                   ))
                 }
               </Row>
-              
-            </Row>
-          </div>
-        </Row>
-      </Container>
-    </div> 
+            </div>
+          </Row>
+        </Container>
+      </div>
     </>
   )
 }

@@ -2,22 +2,25 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Nav from 'react-bootstrap/Nav';
 import { implerLogo } from '../../assets';
-import { useEffect, useState } from 'react';
+import { useEffect, useState ,memo} from 'react';
 import { useTranslation } from 'react-i18next';
 import Upper from './Upper';
 import MobileMenu from './MobileMenu';
 import { AiOutlineMenu ,AiOutlineClose} from 'react-icons/Ai';
+import { useCallback } from 'react';
+
 
 
 const Header = () => {
   const [sticky, setSticky] = useState("");
   const [t,i18n] =useTranslation("translation");
+  console.log('header render oldu')
  
-  const isSticky = () => {
+  const isSticky = useCallback(() => {
     const scrollTop = window.scrollY;
     const stickyClass = scrollTop >= 250 ? "is-sticky" : "";
     setSticky(stickyClass);
-  };
+  },[])
   
   const navbarCards =[
     {
@@ -56,20 +59,20 @@ const Header = () => {
 
   const [open, setOpen] = useState(false);
 
-  const clickHandle = async (lang) => {
+  const clickHandle = useCallback(async (lang) => {
     await i18n.changeLanguage(lang);
     setOpen(false);
-  }
-  const langChecker = (lang = "azerbaycan") => {
+  },[])
+  const langChecker = useCallback((lang = "azerbaycan") => {
 		return lang !== localStorage.getItem("i18nextLng");
-	};
+	},[])
   const langs = ["azerbaycan", "russian", "english"];
   const myLang = langs.filter(langChecker);
   const [click, setClick] = useState(false)
-  const MobileMenuHandler = () => {
+  const MobileMenuHandler = useCallback(() => {
     document.querySelector('.mobilemenu-popup').classList.toggle("show");
     setClick(!click)
-  }
+  },[])
   useEffect(() => {
     window.addEventListener("scroll", isSticky);
     return () => {
@@ -138,4 +141,4 @@ const Header = () => {
     </>
   )
 }
-export default Header
+export default memo(Header)

@@ -7,6 +7,8 @@ import { useTranslation } from 'react-i18next';
 import LoaderContent from '../components/loader/loaderContent';
 import { useState } from 'react';
 
+
+
 const Slider = ({sliderData}) => {
   const apidata =sliderData;
   const [t] = useTranslation("translation");
@@ -39,7 +41,8 @@ const Slider = ({sliderData}) => {
               </div>
               <div className="bottom-text flex items-center ">
                 <FaMapMarkerAlt className="text-[#f6c300] text-[35px] sm:tex-[25px] xs:text-[20px]"  />
-                <h6   className="text-[45px] sm:text-[30px] xs:text-[20px] text-[#f6c300] leading-[90px] pl-3 font-bold"> {apidata && ml(apidata.home_loc_text_az,apidata.home_loc_text_ru,apidata.home_loc_text_en)}</h6>
+                <h6   className="text-[45px] sm:text-[30px] xs:text-[20px] text-[#f6c300] leading-[90px] pl-3 font-bold">
+                   {apidata && ml(apidata?.home_loc_text_az,apidata?.home_loc_text_ru,apidata?.home_loc_text_en)}</h6>
               </div>
             </Container>
           </div>

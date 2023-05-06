@@ -1,6 +1,7 @@
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { memo } from 'react';
 import { AiOutlineInstagram,AiFillLinkedin } from 'react-icons/Ai';
 import { BsFacebook } from 'react-icons/Bs';
 import { FaTiktok } from 'react-icons/fa';
@@ -8,11 +9,11 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
 
-const Footer = () => {
+const Footer = ({footerData}) => {
   const year = new Date().getFullYear();
   const [t] = useTranslation("translation");
-  const data = useSelector((state) => state.list);
-  const apidata = data.data?.socials;
+  const apidata = footerData;
+  console.log('footer render oldu')
   return (
     <>
       <footer className='bg-[#34a08d] pt-[20px] pb-[20px] pl-0 pr-0'>
@@ -52,4 +53,4 @@ const Footer = () => {
   )
 }
 
-export default Footer
+export default memo(Footer)
