@@ -71,7 +71,7 @@ const Contact = ({contactData}) => {
         })
       })
   }
-  
+
   return (
     <>
       <div  className='bg-[#34a08d] pt-[150px] sm:pt-[50px] pb-[150px] sm:pb-[50px] xs:pb-[30px] pl-0 pr-0 md:pl-6 md:pr-6' id='contact'>

@@ -18,7 +18,7 @@ const Partners = ({partnersData}) => {
   const loadMore = useCallback(() => {
     setItems([...items, ...apidata?.slice(items?.length, items?.length + STEP)]);
   },[])
- 
+
   return (
     <>
       <div className='bg-[#EEC542] pt-[150px] sm:pt-[50px] pb-[150px] sm:pb-[50px] pr-0 pl-0 md:pl-6 md:pr-6' id='partners'>

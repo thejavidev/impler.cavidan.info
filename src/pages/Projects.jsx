@@ -29,7 +29,6 @@ const Projects = ({projectData}) => {
       setLoading(false)
     }, 1500);
   }, []);
-
   return (
     <>
 

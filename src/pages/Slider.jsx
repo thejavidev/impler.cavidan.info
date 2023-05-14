@@ -13,7 +13,7 @@ const Slider = ({sliderData}) => {
   const apidata =sliderData;
   const [t] = useTranslation("translation");
   const [loading, setLoading] = useState(false)
-
+  console.log('Slider render oldu')
   useEffect(() => {
       setLoading(true)
       setTimeout(() => {
