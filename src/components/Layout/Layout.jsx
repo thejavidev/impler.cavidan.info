@@ -1,7 +1,7 @@
 import React,{memo} from 'react'
 import Header from '../header/Header'
 import Footer from '../footer/Footer';
-import { Helmet,HelmetProvider  } from 'react-helmet-async';;
+import { Helmet,HelmetProvider  } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import { getMultiLang as ml } from '../MultiLang';
 

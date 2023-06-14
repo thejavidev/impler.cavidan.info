@@ -57,13 +57,14 @@ function App() {
       data:data.data?.socials
     },
   ]
-  useEffect(useCallback(() => {
+
+  useEffect(()=>{
     dispatch(loadposts());
     setLoading(true)
     setTimeout(() => {
       setLoading(false)
-    }, 1500);
-  }, [dispatch]),[])
+    }, 3000);
+  },[dispatch])
   return (
     <>
     {
